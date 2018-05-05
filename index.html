@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -37,11 +37,36 @@
 
 
 
-
   
   
   <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
 
 
 
@@ -50,22 +75,7 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
-
-
-
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="Hexo, NexT" />
@@ -73,6 +83,11 @@
 
 
 
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
 
 
 
@@ -96,12 +111,11 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
-    version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    scheme: 'Gemini',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: true,
     duoshuo: {
       userId: '0',
       author: '博主'
@@ -134,6 +148,12 @@
 
 
 
+
+
+
+
+
+
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -144,7 +164,8 @@
   
 
   <div class="container sidebar-position-left 
-  page-home">
+   page-home 
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -160,7 +181,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">岁月静好，流年无殇</p>
+        <h1 class="site-subtitle" itemprop="description">岁月静好，流年无殇</h1>
       
   </div>
 
@@ -200,22 +221,22 @@
         </li>
       
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
           </a>
         </li>
       
@@ -257,7 +278,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="吴尧尧">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -269,9 +290,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/03/chrome调试webview/" itemprop="url">chrome调试Android webview</a></h1>
+                <a class="post-title-link" href="/2018/03/03/chrome调试webview/" itemprop="url">chrome调试Android webview</a></h2>
         
 
         <div class="post-meta">
@@ -323,16 +344,17 @@
       
         
           
-            <h1 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h1><p>手机正常连接电脑，并且可以在开发工具内部debug</p>
-<h1 id="chrome设置"><a href="#chrome设置" class="headerlink" title="chrome设置"></a>chrome设置</h1><p>打开<code>chrome://inspect</code>，勾选<code>Discover USB devices</code></p>
-<h1 id="在代码中添加运行调试的设置"><a href="#在代码中添加运行调试的设置" class="headerlink" title="在代码中添加运行调试的设置"></a>在代码中添加运行调试的设置</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.KITKAT)&#123;</span><br><span class="line">    webView.setWebContentsDebuggingEnabled(<span class="keyword">true</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h1><p>经过以上的设置，运行程序，打开webview的页面，加载网页，这样在chrome的<code>chrome://inspect</code>页面就可以看到当前打开的页面了</p>
-<p><img src="./chrome_webview_debug_01.jpg" alt=""></p>
-<p>点击链接下面的<code>inspect</code>，即可以查看当前webview中的内容，并且可以在<code>console</code>中执行js以及执行通过webview的<code>addJavascriptInterface</code>注入的native接口</p>
-<p><img src="./chrome_webview_debug_02.jpg" alt=""></p>
-<p>并且可以通过<code>sources</code>标签调试js代码就像在浏览器内部调试网页中的js一样。LOL</p>
-
-          
+          前提条件手机正常连接电脑，并且可以在开发工具内部debug
+chrome设置打开chrome://inspect，勾选Discover USB devices
+在代码中添加运行调试的设置123if(Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.KIT
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/03/chrome调试webview/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -384,7 +406,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="吴尧尧">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -396,9 +418,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/03/weex应用debug/" itemprop="url">weex应用debug</a></h1>
+                <a class="post-title-link" href="/2018/03/03/weex应用debug/" itemprop="url">weex应用debug</a></h2>
         
 
         <div class="post-meta">
@@ -450,18 +472,18 @@
       
         
           
-            <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p><a href="https://weex.apache.org/cn/guide/set-up-env.html" target="_blank" rel="noopener">weex的官方文档</a>里面有很详细的关于weex的开发资料，但是在开发的过程中，按照文档来debug，无法正常进入，经过很长时间的调研以及查找，最终找到一个合适的方案，此处予以记录</p>
-<h1 id="创建weex应用"><a href="#创建weex应用" class="headerlink" title="创建weex应用"></a>创建weex应用</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">weex create weex-starter</span><br></pre></td></tr></table></figure>
-<h1 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i</span><br></pre></td></tr></table></figure>
-<h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev &amp; npm run serve</span><br></pre></td></tr></table></figure>
-<h1 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">weex debug</span><br></pre></td></tr></table></figure>
-<h1 id="扫码"><a href="#扫码" class="headerlink" title="扫码"></a>扫码</h1><ol>
-<li>使用weex playground扫描<code>weex debug</code>打开的页面上的二维码；</li>
-<li>将 <code>http:ip:8081/dist/index.js</code>生成二维码，并使用weex playground扫描；</li>
-</ol>
-<h1 id="打开debug"><a href="#打开debug" class="headerlink" title="打开debug"></a>打开debug</h1><p>在网页上打开 <code>RemoteDebug</code> 选项，即可以debug了； </p>
-
-          
+          背景weex的官方文档里面有很详细的关于weex的开发资料，但是在开发的过程中，按照文档来debug，无法正常进入，经过很长时间的调研以及查找，最终找到一个合适的方案，此处予以记录
+创建weex应用1weex create weex-starter
+安装依赖1npm i
+运行1npm run dev
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/03/weex应用debug/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -513,7 +535,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="吴尧尧">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -525,9 +547,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/22/hadoop伪分布式配置/" itemprop="url">hadoop伪分布式配置</a></h1>
+                <a class="post-title-link" href="/2018/02/22/hadoop伪分布式配置/" itemprop="url">hadoop伪分布式配置</a></h2>
         
 
         <div class="post-meta">
@@ -579,34 +601,16 @@
       
         
           
-            <h1 id="hadoop伪分布式"><a href="#hadoop伪分布式" class="headerlink" title="hadoop伪分布式"></a>hadoop伪分布式</h1><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>下载Hadoop最新版本，并放到特定的目录，在当前用户的根目录下面配置<code>.bash_profile</code>文件，并添加</p>
-<figure class="highlight bash"><figcaption><span>profile</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># hadoop path</span></span><br><span class="line">HADOOP_HOME=/Users/cody/software/hadoop-3.0.0</span><br><span class="line"><span class="built_in">export</span> HADOOP_COMMON_LIB_NATIVE_DIR=<span class="variable">$HADOOP_HOME</span>/lib/native</span><br><span class="line"><span class="built_in">export</span> HADOOP_OPTS=<span class="string">"-Djava.library.path=<span class="variable">$&#123;HADOOP_HOME&#125;</span>/lib/native"</span></span><br><span class="line"><span class="comment"># end hadoop path</span></span><br></pre></td></tr></table></figure>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="etc-hadoop-cor-site-xml"><a href="#etc-hadoop-cor-site-xml" class="headerlink" title="etc/hadoop/cor-site.xml"></a>etc/hadoop/cor-site.xml</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>fs.defaultFS<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://localhost:9000<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">	 <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.tmp.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">value</span>&gt;</span>/your/local/path<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">description</span>&gt;</span>hadoop temp dir<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="etc-hadoop-hdfs-site-xml"><a href="#etc-hadoop-hdfs-site-xml" class="headerlink" title="etc/hadoop/hdfs-site.xml"></a>etc/hadoop/hdfs-site.xml</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>1<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="ssh免密码登陆"><a href="#ssh免密码登陆" class="headerlink" title="ssh免密码登陆"></a>ssh免密码登陆</h3><h4 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh localhost</span><br></pre></td></tr></table></figure>
-<p>如果不成功，则需要配置一下，配置方法为将ssh的pub key添加到~/.ssh/authorized_keys文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -P <span class="string">''</span> -f ~/.ssh/id_rsa  </span><br><span class="line">cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys  </span><br><span class="line">chmod 0600 ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
-<h2 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h2><p>以下展示的是在本地跑一个<strong>MapReduce</strong>任务</p>
-<h3 id="1-格式化文件系统"><a href="#1-格式化文件系统" class="headerlink" title="1. 格式化文件系统"></a>1. 格式化文件系统</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/hdfs namenode -format</span><br></pre></td></tr></table></figure>
-<h3 id="2-静默启动NameNode和DataNode"><a href="#2-静默启动NameNode和DataNode" class="headerlink" title="2. 静默启动NameNode和DataNode"></a>2. 静默启动NameNode和DataNode</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sbin/start-dfs.sh</span><br></pre></td></tr></table></figure>
-<p>hadoop静默log输出到<strong>$HADOOP_HOME/logs</strong>目录下面</p>
-<h3 id="3-NameNode网页界面"><a href="#3-NameNode网页界面" class="headerlink" title="3. NameNode网页界面"></a>3. NameNode网页界面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:9870/</span><br></pre></td></tr></table></figure>
-<h3 id="4-创建执行MapReduce任务所需要的HDFS目录"><a href="#4-创建执行MapReduce任务所需要的HDFS目录" class="headerlink" title="4. 创建执行MapReduce任务所需要的HDFS目录"></a>4. 创建执行<strong>MapReduce</strong>任务所需要的HDFS目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bin/hdfs dfs -mkdir /user</span><br><span class="line">bin/hdfs dfs -mkdir /user/cody</span><br></pre></td></tr></table></figure>
-<h3 id="5-将文件拷贝到分布式文件系统"><a href="#5-将文件拷贝到分布式文件系统" class="headerlink" title="5. 将文件拷贝到分布式文件系统"></a>5. 将文件拷贝到分布式文件系统</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bin/hdfs dfs -mkdir input</span><br><span class="line">bin/hdfs dfs -put etc/hadoop/*.xml input</span><br></pre></td></tr></table></figure>
-<h3 id="6-运行demo程序"><a href="#6-运行demo程序" class="headerlink" title="6. 运行demo程序"></a>6. 运行demo程序</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-3.0.0.jar grep input output <span class="string">'dfs[a-z.]+'</span></span><br></pre></td></tr></table></figure>
-<h3 id="7-检测输出文件"><a href="#7-检测输出文件" class="headerlink" title="7. 检测输出文件"></a>7. 检测输出文件</h3><p>将输出文件从分布式文件系统考到本地系统</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">bin/hdfs dfs -get output output</span><br><span class="line">``` </span><br><span class="line">在分布式系统中查看</span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line">bin/hdfs dfs -cat output/*</span><br></pre></td></tr></table></figure>
-<h3 id="8-停止运行"><a href="#8-停止运行" class="headerlink" title="8. 停止运行"></a>8. 停止运行</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/stop-dfs.sh</span><br></pre></td></tr></table></figure>
-<h1 id="YARN"><a href="#YARN" class="headerlink" title="YARN"></a>YARN</h1><h2 id="配置参数"><a href="#配置参数" class="headerlink" title="配置参数"></a>配置参数</h2><h3 id="1-etc-hadoop-mapred-site-xml"><a href="#1-etc-hadoop-mapred-site-xml" class="headerlink" title="1. etc/hadoop/mapred-site.xml"></a>1. etc/hadoop/mapred-site.xml</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>mapreduce.framework.name<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>yarn<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-etc-hadoop-yarn-site-xml"><a href="#2-etc-hadoop-yarn-site-xml" class="headerlink" title="2. etc/hadoop/yarn-site.xml"></a>2. etc/hadoop/yarn-site.xml</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.nodemanager.aux-services<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>mapreduce_shuffle<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.nodemanager.env-whitelist<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,CLASSPATH_PREPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_MAPRED_HOME<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="3-start-yarn-sh-启动yarn"><a href="#3-start-yarn-sh-启动yarn" class="headerlink" title="3. start-yarn.sh 启动yarn"></a>3. start-yarn.sh 启动yarn</h3><h3 id="4-stop-yarn-sh-关闭yarn"><a href="#4-stop-yarn-sh-关闭yarn" class="headerlink" title="4. stop-yarn.sh 关闭yarn"></a>4. stop-yarn.sh 关闭yarn</h3><h1 id="错误修复"><a href="#错误修复" class="headerlink" title="错误修复"></a>错误修复</h1><h1 id="1-运行命令行报warn错误"><a href="#1-运行命令行报warn错误" class="headerlink" title="1. 运行命令行报warn错误"></a>1. 运行命令行报<strong>warn</strong>错误</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable</span><br></pre></td></tr></table></figure>
-<p>解决方案</p>
-<p><a href="http://www.cnblogs.com/likui360/p/6558749.html" target="_blank" rel="noopener">连接地址</a></p>
-<h1 id="2-每次重启机器，都会需要重新执行-hdfs-namenode-format-否则无法正常执行"><a href="#2-每次重启机器，都会需要重新执行-hdfs-namenode-format-否则无法正常执行" class="headerlink" title="2. 每次重启机器，都会需要重新执行 hdfs namenode -format 否则无法正常执行"></a>2. 每次重启机器，都会需要重新执行 hdfs namenode -format 否则无法正常执行</h1><p>需要在core-site.xml中添加配置项</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.tmp.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>/your/local/path<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">description</span>&gt;</span>hadoop temp dir<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><a href="http://blog.csdn.net/zhangt85/article/details/42076207" target="_blank" rel="noopener">解决方案参考</a></p>
-
-          
+          hadoop伪分布式下载下载Hadoop最新版本，并放到特定的目录，在当前用户的根目录下面配置.bash_profile文件，并添加
+profile12345# hadoop pathHADOOP_HOME=/Users/cody/software/hadoop-3.0.0export HADOOP
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/22/hadoop伪分布式配置/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -658,7 +662,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="吴尧尧">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -670,9 +674,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/05/我将在2018应该入手哪些技术/" itemprop="url">我将在2018应该入手哪些技术</a></h1>
+                <a class="post-title-link" href="/2018/01/05/我将在2018应该入手哪些技术/" itemprop="url">我将在2018应该入手哪些技术</a></h2>
         
 
         <div class="post-meta">
@@ -724,13 +728,17 @@
       
         
           
-            <h1 id="我将在2018应该入手哪些技术"><a href="#我将在2018应该入手哪些技术" class="headerlink" title="我将在2018应该入手哪些技术"></a>我将在2018应该入手哪些技术</h1><h2 id="区块链"><a href="#区块链" class="headerlink" title="区块链"></a>区块链</h2><p>毫无疑问，经过前几年的积累，区块链是时候进入数字货币以为的领域了，虽然对那些山寨币不置可否，但是作为数字货币的基层建筑，必将大展手脚</p>
-<h2 id="weex"><a href="#weex" class="headerlink" title="weex"></a>weex</h2><p>嗯，没错，是时候尝试一下了，虽然react-native很优秀，但是weex的理念确实很迷人</p>
-<h2 id="GraphQL"><a href="#GraphQL" class="headerlink" title="GraphQL"></a>GraphQL</h2><p>又是facebook的开源项目，大厂产，值得信赖；</p>
-<h2 id="Typescript-or-Flow"><a href="#Typescript-or-Flow" class="headerlink" title="Typescript or Flow"></a>Typescript or Flow</h2><p>这个待定，貌似Flow更适合目前的场景</p>
-<h2 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h2><p>观望好久了，是时候在合适的项目使用node来搞一下了，毕竟大厂早就开始了，并且ibm在做超级账本开源项目的时候，把go和node作为最先支持的两个语言是有道理的；后题开发的话可以使用koa或者阿里的开源项目egg.js</p>
-
-          
+          我将在2018应该入手哪些技术区块链毫无疑问，经过前几年的积累，区块链是时候进入数字货币以为的领域了，虽然对那些山寨币不置可否，但是作为数字货币的基层建筑，必将大展手脚
+weex嗯，没错，是时候尝试一下了，虽然react-native很优秀，但是weex的理念确实很迷人
+GraphQL又是faceb
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/05/我将在2018应该入手哪些技术/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -782,7 +790,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="吴尧尧">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -794,9 +802,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/16/什么是区块链/" itemprop="url">什么是区块链</a></h1>
+                <a class="post-title-link" href="/2017/12/16/什么是区块链/" itemprop="url">什么是区块链</a></h2>
         
 
         <div class="post-meta">
@@ -848,49 +856,16 @@
       
         
           
-            <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>Hyperledger Fabric是分布式账本解决方案的平台，支持模块化架构，提供高度的机密性，弹性，灵活性和可扩展性。它旨在支持不同组件的可插拔实现，并适应经济生态系统中存在的复杂性。</p>
-<p>Hyperledger Fabric提供独特的弹性和可扩展架构，区别于其他区块链解决方案。规划企业区块链的未来需要建立在完全审核的开源架构之上; Hyperledger Fabric是你的出发点。</p>
-<p>我们建议首次使用的用户首先阅读以下介绍的其余部分，以便熟悉区块链的工作方式以及Hyperledger Fabric的特定功能和组件。</p>
-<p>一旦舒适，或者您已经熟悉区块链和Hyperledger Fabric，请转到“入门”，并从这里探索演示，技术规范，API等。</p>
-<h1 id="什么是区块链"><a href="#什么是区块链" class="headerlink" title="什么是区块链"></a>什么是区块链</h1><p>##分布式账本</p>
-<p>区块链网络的核心是一个分布式账本，记录在网络上发生的所有交易。</p>
-<p>区块链账本通常被描述为分散的，因为它被复制到许多网络参与者中，每个参与者都在协作维护。 我们将看到，去中心话和合作是反映企业在现实世界中交换货物和服务方式的强大属性。<br><img src="basic_network.png" alt=""><br>除了分散和协作之外，记录在区块链中的信息只能追加，使用加密技术，保证一旦事务被添加到分类账中，就不能被修改。 这种不变性的特征使得确定信息的来源变得简单，因为参与者可以确定信息在事实之后没有被改变。 这就是区块链有时被描述为证明体系的原因。</p>
-<h2 id="智能合约"><a href="#智能合约" class="headerlink" title="智能合约"></a>智能合约</h2><p>为了支持信息的一致性更新 - 以及启用一整套账本功能（交易，查询等） - 区块链网络使用智能合约来提供对分类账的受控访问。<br><img src="Smart_Contract.png" alt=""></p>
-<p>智能合约不仅是封装信息并使其在整个网络中保持简单的关键机制，还可以写入智能合同以允许参与者自动执行交易的某些方面。</p>
-<p>例如，可以写一个智能合同来规定运输项目的成本，这个成本取决于何时到达。 根据双方同意并写入账本的条款，当收到项目时，适当的资金自动转手。</p>
-<h2 id="共识"><a href="#共识" class="headerlink" title="共识"></a>共识</h2><p>在整个网络中保持账本交易同步的过程 - 确保账本只在交易获得适当的参与者批准时才更新，当账本更新时，它们以相同的顺序更新相同的交易 - 称为共识。</p>
-<p><img src="consensus.png" alt=""></p>
-<p>我们将在后面学习更多关于账本，智能合同和共识的知识。 现在，将区块链视为一个共享的，复制的交易系统就足够了，该系统通过智能合约进行更新，并通过一个称为共识的协作过程保持一致的同步。</p>
-<h1 id="为什么区块链有用？"><a href="#为什么区块链有用？" class="headerlink" title="为什么区块链有用？"></a>为什么区块链有用？</h1><h2 id="当今的记账系统"><a href="#当今的记账系统" class="headerlink" title="当今的记账系统"></a>当今的记账系统</h2><p>今天的交易网络只不过是自业务记录以来存在的略微更新的网络版本。 业务网络的成员彼此进行交易，但是他们保持单独的交易记录。 而且他们正在进行的交易 - 无论是16世纪的佛兰芒挂毯还是今天的证券 - 都必须在每次出售时建立其出处，以确保出售商品的商业拥有一系列所有权，以验证他们对商品的拥有权</p>
-<p>你留下的是一个这样的业务网络：</p>
-<p><img src="./current_network.png" alt=""></p>
-<p>现代技术已经从石碑和纸质文件夹到硬盘驱动器和云平台，但是其底层结构是相同的。用于管理网络参与者身份的统一系统不存在，建立起源是非常费力的，需要数天的时间才能清除证券交易（世界交易量在数万亿美元），合同必须手动签署和执行，系统中的每个数据库都包含唯一的信息，因此代表单点故障。</p>
-<p>尽管知名度和信任度的需求是明确的，但是今天的信息和流程分享方法仍然不可能建立跨越商业网络的记录系统。</p>
-<h2 id="区块链差异"><a href="#区块链差异" class="headerlink" title="区块链差异"></a>区块链差异</h2><p>如果不是由“现代”交易系统所代表的低效率的老鼠窝，那么商业网络是否具有在网络上建立身份，执行交易和存储数据的标准方法？ 如果建立一个资产的来源可以通过查看一个交易清单来确定，一旦书面交易，这个交易清单是不能改变的，因此可以被信任？</p>
-<p>该业务网络看起来更像这样：<br><img src="./future_net.png" alt=""><br>这是一个区块链网络。每个参与者都有自己的账本副本。除了共享账本信息之外，更新账本的过程也是共享的。与今天的系统不同的是，参与者的私人计划被用来更新他们的私人账本，区块链系统共享程序来更新共享账本。</p>
-<p>凭借通过共享账本协调其业务网络的能力，区块链网络可以减少与私人信息和处理相关的时间，成本和风险，同时提高信任度和可视性。</p>
-<p>您现在知道区块链是什么以及它为什么有用。还有很多其他的重要细节，但都涉及这些信息和流程共享的基本思想。</p>
-<h2 id="什么是HyperLedger-Fabric？"><a href="#什么是HyperLedger-Fabric？" class="headerlink" title="什么是HyperLedger Fabric？"></a>什么是HyperLedger Fabric？</h2><p>Linux基金会于2015年创立了Hyperledger，以推动跨行业区块链技术的发展。 它不是宣布单一区块链标准，而是鼓励通过社区处理开发区块链技术的协作方法，鼓励开放式开发的知识产权和随着时间的推移建立关键标准。</p>
-<p>Hyperledger Fabric是Hyperledger中的区块链项目之一。像其他区块链技术一样，它具有账本，使用智能合约，并且是参与者管理其交易的系统。</p>
-<p>Hyperledger Fabric与其它区块链系统的主要区别在于它是私有的和权限化的。 Hyperledger Fabric网络的成员通过成员资格服务提供商（MSP）注册，而不是一个允许未知身份参与网络的开放式无权限系统（需要证明工作证明的协议来验证交易和保护网络）。</p>
-<p>Hyperledger Fabric还提供了几个可插拔选项。账簿数据可以以多种格式存储，共识机制可以切入和切出，并支持不同的MSP。</p>
-<p>Hyperledger Fabric还提供创建频道（channel）的能力，允许一组参与者创建单独的交易账本。 对于一些参与者可能是竞争对手而不希望进行的每一笔被所有参与者知道，这是一个特别重要的选择 - 例如，他们向某些参与者提供了一个特殊的价格，而其它人不是。 如果两个参与者形成一个频道，那么这些参与者（而不是其他人）就拥有该频道的分类账副本。</p>
-<h2 id="共享账本"><a href="#共享账本" class="headerlink" title="共享账本"></a>共享账本</h2><p>Hyperledger Fabric有一个账本子系统，由两个组件组成：全局状态和事务日志。 每个参与者都拥有他所属的每一个Hyperledger Fabric网络的账本副本。 全局状态组件描述了在某个特定时间点的账本的状态。 这是账本的数据库。 事务日志组件记录导致当前全局状态值的所有事务。 这是全局状态的更新历史。 账本则是全局状态数据库和交易日志历史的组合。 账本拥有全局状态可替换的数据存储。 默认情况下，这是一个LevelDB键值存储数据库。 事务日志不需要是可插拔的。 它只是记录区块链网络正在使用的分类账数据库的前后值。</p>
-<h2 id="智能合约-1"><a href="#智能合约-1" class="headerlink" title="智能合约"></a>智能合约</h2><p>Hyperledger Fabric智能合约以链码形式编写，并在应用程序需要与分类账交互时由区块链外部的应用程序调用。 在大多数情况下，链代码仅与分类账的数据库组件，全局状态（例如查询）交互，而不是交易日志。</p>
-<p>Chaincode可以用几种编程语言来实现。当前支持的链式代码语言是Go，支持未来发行版中的Java和其他语言。</p>
-<h2 id="隐私"><a href="#隐私" class="headerlink" title="隐私"></a>隐私</h2><p>根据网络的需求，企业对企业（B2B）网络的参与者可能对他们共享的信息数量非常敏感。对于其他网络来说，隐私并不是最关心的问题。</p>
-<p>Hyperledger Fabric支持隐私（使用频道）是关键操作要求的网络以及相对开放的网络。</p>
-<h2 id="共识-1"><a href="#共识-1" class="headerlink" title="共识"></a>共识</h2><p>交易必须按照发生的顺序写入账本，尽管它们可能位于网络中的不同参与者之间。为了实现这一点，必须建立交易顺序，并且必须实施一种方法来拒绝已经插入错误（或恶意）的账本中的不良交易。</p>
-<p>这是一个经过深入研究的计算机科学领域，有很多方法来实现它，每个方法都有不同的权衡。例如，PBFT（实用的拜占庭容错）可以提供文件副本相互通信的机制，以保持每个副本的一致性，即使在发生损坏的情况下也是如此。或者，在比特币中，通过一个称为挖掘的过程来进行排序，在这个过程中，竞争的计算机竞相解决一个加密难题，这个难题定义了所有进程随后建立的顺序</p>
-<p>Hyperledger Fabric被设计为允许网络起始者选择最能代表参与者之间存在关系的共识机制。与隐私一样，还有一系列需求。从具有高度结构化的关系网络到更加对等的网络。</p>
-<p>我们将更多地了解Hyperledger Fabric共识机制，目前包括SOLO和Kafka，并且很快将扩展到SBFT（简化的拜占庭容错），在另一个文档中。</p>
-<h1 id="我在哪里可以学到更多？"><a href="#我在哪里可以学到更多？" class="headerlink" title="我在哪里可以学到更多？"></a>我在哪里可以学到更多？</h1><p><a href="https://hyperledger-fabric.readthedocs.io/en/latest/getting_started.html" target="_blank" rel="noopener">入门</a></p>
-<p>我们提供了许多教程，介绍区块链网络中的大多数关键组件，了解更多关于它们如何相互作用的信息，然后您将获得代码并针对运行运行一些简单的事务区块链网络。我们还为那些想使用Hyperledger Fabric操作区块链网络的人提供教程。</p>
-<p><a href="https://hyperledger-fabric.readthedocs.io/en/latest/fabric_model.html" target="_blank" rel="noopener">Hyperledger Fabric 模型</a></p>
-<p>深入了解本介绍中提到的组件和概念以及其他几个概念，并描述它们如何在示例事务流中一起工作。</p>
-<p><a href="https://hyperledger-fabric.readthedocs.io/en/latest/blockchain.html#what-is-a-blockchain" target="_blank" rel="noopener">原文</a></p>
-
-          
+          介绍Hyperledger Fabric是分布式账本解决方案的平台，支持模块化架构，提供高度的机密性，弹性，灵活性和可扩展性。它旨在支持不同组件的可插拔实现，并适应经济生态系统中存在的复杂性。
+Hyperledger Fabric提供独特的弹性和可扩展架构，区别于其他区块链解决方案。规划企业区块链的
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/16/什么是区块链/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -942,7 +917,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="吴尧尧">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -954,9 +929,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/14/SpringBoot部署为linux服务/" itemprop="url">spring boot部署为linux服务</a></h1>
+                <a class="post-title-link" href="/2017/12/14/SpringBoot部署为linux服务/" itemprop="url">spring boot部署为linux服务</a></h2>
         
 
         <div class="post-meta">
@@ -1008,14 +983,15 @@
       
         
           
-            <h2 id="添加pom-xml配置项"><a href="#添加pom-xml配置项" class="headerlink" title="添加pom.xml配置项"></a>添加pom.xml配置项</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;build&gt;                                                          </span><br><span class="line">	&lt;plugins&gt;                                                    </span><br><span class="line">		&lt;plugin&gt;                                                 </span><br><span class="line">			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;          </span><br><span class="line">			&lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;    </span><br><span class="line">			&lt;configuration&gt;                                      </span><br><span class="line">				&lt;executable&gt;true&lt;/executable&gt;                    </span><br><span class="line">			&lt;/configuration&gt;                                     </span><br><span class="line">		&lt;/plugin&gt;                                                </span><br><span class="line">	&lt;/plugins&gt;                                                   </span><br><span class="line">&lt;/build&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="项目打包"><a href="#项目打包" class="headerlink" title="项目打包"></a>项目打包</h2><p>使用ide或者mvn命令打包应用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn package</span><br></pre></td></tr></table></figure></p>
-<h2 id="创建linux服务"><a href="#创建linux服务" class="headerlink" title="创建linux服务"></a>创建linux服务</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /var/springbootapp/myapp.jar /etc/init.d/myapp</span><br></pre></td></tr></table></figure>
-<p>这样将jar创建为系统的服务了，查看/etc/init.d/myapp 可以看到，这是一个shell脚本<br>查看myapp脚本是否有执行的权限，如果没有，则使用chmod命令修改</p>
-<h2 id="按照系统服务运行项目"><a href="#按照系统服务运行项目" class="headerlink" title="按照系统服务运行项目"></a>按照系统服务运行项目</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service myapp start | stop | restart</span><br></pre></td></tr></table></figure>
-<h2 id="更新项目"><a href="#更新项目" class="headerlink" title="更新项目"></a>更新项目</h2><p>下次更新项目只需要把jar包替换掉，然后执行restart就可以了</p>
-
-          
+          添加pom.xml配置项1234567891011&lt;build&gt;                                                          	&lt;plugins&gt;                                      
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/14/SpringBoot部署为linux服务/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1067,7 +1043,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="吴尧尧">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1079,9 +1055,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/11/区块链vs数据库/" itemprop="url">区块链vs数据库</a></h1>
+                <a class="post-title-link" href="/2017/12/11/区块链vs数据库/" itemprop="url">区块链vs数据库</a></h2>
         
 
         <div class="post-meta">
@@ -1133,42 +1109,16 @@
       
         
           
-            <p>随着区块链技术改变我们的世界，了解区块链技术或传统数据库之间的差异非常重要。哪个更适合你的用例？有可能不是每个项目或用例都需要相同的技术解决方案。此外，区块链和数据库的使用可以相互补充。你可能不一定需要选择一个。因此，为您的用例找到正确的组合非常重要。区块链和数据库之间有几个关键的区别。</p>
-<p>区块链特有的主要功能之一是可以建立起源地。通过追踪数字记录的出处，人们可以确定它是如何创建的，它的历史，所有权和保管顺序，存储位置以及记录的完整性。区块链能够向您显示数据集的当前版本以及同一数据集的每个先前版本，并带有时间戳和密码证明，这些数据没有被更改。每个条目都永久写入区块链，不能更改。如果您不信任您正在使用的其他方而不更改数据集，则这种做法非常有用。由于各方（即运行协议的计算机或“节点”）互相检查对方的工作，并同意进入区块链，所以信任得到维护，确保数据是不变的和真实的。区块链是分散的，添加数据的能力不限于中央资源。相反，数据库都依赖于客户机 - 服务器体系结构，服务器通常是集中式的。</p>
-<p>现在我们来谈谈数据库。像区块链一样，现代数据库可以存储历史和以前版本的数据。数据库比区块链更有效率。区块链的重要区别在于建立信任和出处。数据库被设计为访问对象的当前状态，并且它的历史可以被轻易擦除。区块链虽然缓慢笨重，却是不变的。数据库通常由中央主管部门管理，所有参与数据库的人员都表现出对中央当局诚实交易的信任。没有必要证明数据集以前的版本，因为各方都相信中央当局公平管理，而不是偏向一方。</p>
-<p><img src="why-use-blockchain.png" alt="why-use-blockchain"></p>
-<p>如果存储或共享数据方之间缺乏信任，则可以考虑使用区块链。 区块链和传统数据库之间的这些区别将有助于确定哪种更适合您的用例：</p>
-<table>
-<thead>
-<tr>
-<th>区块链</th>
-<th>数据库</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>分散控制</strong>没有中央权力 - 对于当事人彼此之间缺乏信任的情况，数据是不可变的，因为当事人可以查看和验证来自任何组织或时间框架的散列的数据。</td>
-<td><strong>集中控制</strong>管理员或授权者 - 各方信任管理员，但是如果拥有网络的主管当局受到威胁，所有驻留在网络中的数据也会受到影响。</td>
-</tr>
-<tr>
-<td><strong>有历史记录</strong> - 除当前快照以外，还包括对审计有用的健壮数据集，以及数据可能需要超过其即时使用量的任何实例。 条目有时间戳，并给出加密证明数据没有改变。</td>
-<td><strong>没有历史记录</strong> - 数据库中的信息在特定时刻是最新的。 没有必要证明它没有改变，尤其是因为任何有权访问数据库的人都可以编辑条目。</td>
-</tr>
-<tr>
-<td><strong>没有数据保密</strong> - 区块链中的所有内容都可以通过区块链访问。</td>
-<td><strong>数据保密</strong> - 仅限数据库成员允许访问。</td>
-</tr>
-<tr>
-<td><strong>较慢的性能时间</strong> - 节点通过在运行该协议的所有节点之间使用对等系统检查添加到区块链的工作来建立共识。</td>
-<td><strong>更快的执行时间</strong> - 由于信任被假定，处理事务毫不犹豫或滞后。</td>
-</tr>
-</tbody>
-</table>
-<p><strong>如果你正在寻求信任和不变性，区块链解决方案可能是你最合适的。</strong></p>
-<p><strong>如果你需要保密和性能，数据库可能是你最合适的。</strong></p>
-<p><a href="https://www.factom.com/university/tracks/fundamentals/blockchain-vs-database" target="_blank" rel="noopener">原文 Blockchain vs Database</a></p>
-
-          
+          随着区块链技术改变我们的世界，了解区块链技术或传统数据库之间的差异非常重要。哪个更适合你的用例？有可能不是每个项目或用例都需要相同的技术解决方案。此外，区块链和数据库的使用可以相互补充。你可能不一定需要选择一个。因此，为您的用例找到正确的组合非常重要。区块链和数据库之间有几个关键的区别。
+区块链特有
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/11/区块链vs数据库/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1220,7 +1170,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="吴尧尧">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1232,9 +1182,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/24/AI计划/" itemprop="url">AI计划</a></h1>
+                <a class="post-title-link" href="/2017/11/24/AI计划/" itemprop="url">AI计划</a></h2>
         
 
         <div class="post-meta">
@@ -1286,11 +1236,15 @@
       
         
           
-            <h1 id="恐慌"><a href="#恐慌" class="headerlink" title="恐慌"></a>恐慌</h1><p>记得几个月之前的<a href="http://star.baidu.com/" target="_blank" rel="noopener">百度AI开发者大会</a>，李彦宏驾驶无人驾驶汽车的那一刻，我的心情充满了激动，接踵而来的是恐慌，这种恐慌情绪一直蔓延了好久，直到几周之后我才恍然醒悟，我为什么会有这样的心情。我激动的是人类的生产力必将得到进一步的解放，而恐慌的是我毫无准备。在接下来一段时间我在不断的彷徨着，机器学习/深度学习/人工智能，这对于我而言是一门很陌生和遥远的课程。对于未来，这些会有怎么样的冲击，我是否应该投身而内。</p>
-<h1 id="试探"><a href="#试探" class="headerlink" title="试探"></a>试探</h1><p>遇到事情就放置不管绝不是IT从业者的习惯，这几个月虽然忙碌，但是也会抽出一些时间来了解这门陌生的学科，还准备了很多的材料，但是当我打算去学习的时候，才发现，真的好难，这门学科所有的预备知识对于我都是一片空白。迎难而上应该是大多数程序员的品质了，为了提升自己，为了战胜恐慌，特别以此文来激励自己，让自己能有坚定的去从头开始，话几个月入门这门学科。</p>
-<h1 id="加油"><a href="#加油" class="headerlink" title="加油"></a>加油</h1><p>待补充…</p>
-
-          
+          恐慌记得几个月之前的百度AI开发者大会，李彦宏驾驶无人驾驶汽车的那一刻，我的心情充满了激动，接踵而来的是恐慌，这种恐慌情绪一直蔓延了好久，直到几周之后我才恍然醒悟，我为什么会有这样的心情。我激动的是人类的生产力必将得到进一步的解放，而恐慌的是我毫无准备。在接下来一段时间我在不断的彷徨着，机器学习/深
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/24/AI计划/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1342,7 +1296,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="吴尧尧">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1354,9 +1308,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/22/开始/" itemprop="url">开始</a></h1>
+                <a class="post-title-link" href="/2017/11/22/开始/" itemprop="url">开始</a></h2>
         
 
         <div class="post-meta">
@@ -1408,13 +1362,16 @@
       
         
           
-            <p>最近折腾一下把博客搭建起来，记得2011年刚毕业的时候，很喜欢在博客园记录自己的工作以及学习经历，但是随着工作的进行慢慢的就丢掉了这样的好习惯，至于现在突然想捡起多久不做的事情有几项考虑</p>
-<p>其一最近几年工作所用知识颇为广泛，从Android到web前端，再到后台，每一次都有不错的工作体验，也颇有积累，然而时间一久不用，就会忘记，也无法将自己所学整为体系。</p>
-<p>其二在现在的公司工作颇久，有些静极思动，也想通过整理知识来提升能力，将知识整为一体。</p>
-<p>其三每次看到各位大牛长期坚持写博，都标为榜样，现在下定决心通过系统向各位大牛靠近。</p>
-<p>写于南京</p>
-
-          
+          最近折腾一下把博客搭建起来，记得2011年刚毕业的时候，很喜欢在博客园记录自己的工作以及学习经历，但是随着工作的进行慢慢的就丢掉了这样的好习惯，至于现在突然想捡起多久不做的事情有几项考虑
+其一最近几年工作所用知识颇为广泛，从Android到web前端，再到后台，每一次都有不错的工作体验，也颇有积累，
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/22/开始/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1479,57 +1436,57 @@
 
       
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">吴尧尧</p>
-              <p class="site-description motion-element" itemprop="description">spring/spring boot/javascript/node.js/react/vue</p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">9</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          <div class="links-of-author motion-element">
-            
-          </div>
-
-          
-          
-
-          
-          
-
-          
-
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="吴尧尧" />
+          <p class="site-author-name" itemprop="name">吴尧尧</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
         </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
       </section>
 
       
@@ -1546,36 +1503,30 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">吴尧尧</span>
-
-  
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.3</div>
-
-
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Gemini
+  </a>
+</div>
 
 
         
-
-
-
-
-
-
 
         
       </div>
@@ -1641,28 +1592,32 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
 
 
 
   
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+  
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
 
 
 
@@ -1693,8 +1648,6 @@
 
 
 
-
-
   
 
 
@@ -1704,6 +1657,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 
