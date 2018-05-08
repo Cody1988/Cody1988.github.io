@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="debug,weex," />
+  <meta name="keywords" content="flow,react,webpack," />
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="背景weex的官方文档里面有很详细的关于weex的开发资料，但是在开发的过程中，按照文档来debug，无法正常进入，经过很长时间的调研以及查找，最终找到一个合适的方案，此处予以记录 创建weex应用1weex create weex-starter 安装依赖1npm i 运行1npm run dev &amp;amp;">
-<meta name="keywords" content="debug,weex">
+<meta name="description" content="在React项目中使用flowflow是Javascript的静态类型检测器。静态类型检测需不需要看个人以及团队的需要，个人在开发中发现，小项目一两个人的小团队，在开发中很难意识到静态类型检测的重要性，一旦团队人员扩张或者项目变庞大复杂，那么静态类型检测基本上属于必备品。 在项目中添加flow此次实践，主要是在基于">
+<meta name="keywords" content="flow,react,webpack">
 <meta property="og:type" content="article">
-<meta property="og:title" content="weex应用debug">
-<meta property="og:url" content="http://blog.wuyaoyao.com/2018/03/03/weex应用debug/index.html">
+<meta property="og:title" content="React中集成flow">
+<meta property="og:url" content="http://blog.wuyaoyao.com/2018/05/08/React中集成flow/index.html">
 <meta property="og:site_name" content="吴尧尧的小栈">
-<meta property="og:description" content="背景weex的官方文档里面有很详细的关于weex的开发资料，但是在开发的过程中，按照文档来debug，无法正常进入，经过很长时间的调研以及查找，最终找到一个合适的方案，此处予以记录 创建weex应用1weex create weex-starter 安装依赖1npm i 运行1npm run dev &amp;amp; npm run serve debug1weex debug 扫码 使用weex pl">
+<meta property="og:description" content="在React项目中使用flowflow是Javascript的静态类型检测器。静态类型检测需不需要看个人以及团队的需要，个人在开发中发现，小项目一两个人的小团队，在开发中很难意识到静态类型检测的重要性，一旦团队人员扩张或者项目变庞大复杂，那么静态类型检测基本上属于必备品。 在项目中添加flow此次实践，主要是在基于webpack配置的React项目中添加flow的配置过程 首先安装flow-b">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-03T02:16:16.707Z">
+<meta property="og:updated_time" content="2018-05-08T03:14:22.649Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="weex应用debug">
-<meta name="twitter:description" content="背景weex的官方文档里面有很详细的关于weex的开发资料，但是在开发的过程中，按照文档来debug，无法正常进入，经过很长时间的调研以及查找，最终找到一个合适的方案，此处予以记录 创建weex应用1weex create weex-starter 安装依赖1npm i 运行1npm run dev &amp;amp; npm run serve debug1weex debug 扫码 使用weex pl">
+<meta name="twitter:title" content="React中集成flow">
+<meta name="twitter:description" content="在React项目中使用flowflow是Javascript的静态类型检测器。静态类型检测需不需要看个人以及团队的需要，个人在开发中发现，小项目一两个人的小团队，在开发中很难意识到静态类型检测的重要性，一旦团队人员扩张或者项目变庞大复杂，那么静态类型检测基本上属于必备品。 在项目中添加flow此次实践，主要是在基于webpack配置的React项目中添加flow的配置过程 首先安装flow-b">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.wuyaoyao.com/2018/03/03/weex应用debug/"/>
+  <link rel="canonical" href="http://blog.wuyaoyao.com/2018/05/08/React中集成flow/"/>
 
 
 
 
 
-  <title>weex应用debug | 吴尧尧的小栈</title>
+  <title>React中集成flow | 吴尧尧的小栈</title>
   
 
 
@@ -273,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.wuyaoyao.com/2018/03/03/weex应用debug/">
+    <link itemprop="mainEntityOfPage" href="http://blog.wuyaoyao.com/2018/05/08/React中集成flow/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="吴尧尧">
@@ -290,7 +290,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">weex应用debug</h2>
+          <h2 class="post-title" itemprop="name headline">React中集成flow</h2>
         
 
         <div class="post-meta">
@@ -302,8 +302,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-03T09:21:08+08:00">
-                2018-03-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-08T10:35:07+08:00">
+                2018-05-08
               </time>
             
 
@@ -340,16 +340,20 @@
       
 
       
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p><a href="https://weex.apache.org/cn/guide/set-up-env.html" target="_blank" rel="noopener">weex的官方文档</a>里面有很详细的关于weex的开发资料，但是在开发的过程中，按照文档来debug，无法正常进入，经过很长时间的调研以及查找，最终找到一个合适的方案，此处予以记录</p>
-<h1 id="创建weex应用"><a href="#创建weex应用" class="headerlink" title="创建weex应用"></a>创建weex应用</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">weex create weex-starter</span><br></pre></td></tr></table></figure>
-<h1 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i</span><br></pre></td></tr></table></figure>
-<h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev &amp; npm run serve</span><br></pre></td></tr></table></figure>
-<h1 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">weex debug</span><br></pre></td></tr></table></figure>
-<h1 id="扫码"><a href="#扫码" class="headerlink" title="扫码"></a>扫码</h1><ol>
-<li>使用weex playground扫描<code>weex debug</code>打开的页面上的二维码；</li>
-<li>将 <code>http:ip:8081/dist/index.js</code>生成二维码，并使用weex playground扫描；</li>
-</ol>
-<h1 id="打开debug"><a href="#打开debug" class="headerlink" title="打开debug"></a>打开debug</h1><p>在网页上打开 <code>RemoteDebug</code> 选项，即可以debug了； </p>
+        <h1 id="在React项目中使用flow"><a href="#在React项目中使用flow" class="headerlink" title="在React项目中使用flow"></a>在React项目中使用flow</h1><p><code>flow</code>是Javascript的静态类型检测器。静态类型检测需不需要看个人以及团队的需要，个人在开发中发现，小项目一两个人的小团队，在开发中很难意识到静态类型检测的重要性，一旦团队人员扩张或者项目变庞大复杂，那么静态类型检测基本上属于必备品。</p>
+<h1 id="在项目中添加flow"><a href="#在项目中添加flow" class="headerlink" title="在项目中添加flow"></a>在项目中添加flow</h1><p>此次实践，主要是在基于<code>webpack</code>配置的<code>React</code>项目中添加<code>flow</code>的配置过程</p>
+<p>首先安装<code>flow-bin</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev flow-bin</span><br></pre></td></tr></table></figure></p>
+<h1 id="在scripts中添加flow"><a href="#在scripts中添加flow" class="headerlink" title="在scripts中添加flow"></a>在<code>scripts</code>中添加<code>flow</code></h1><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">    "start": "npm run dev",</span><br><span class="line">    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --config webpack.dev.js",</span><br><span class="line">    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js",</span><br><span class="line">    "flow": "flow"</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+<h1 id="初始化flow配置"><a href="#初始化flow配置" class="headerlink" title="初始化flow配置"></a>初始化<code>flow</code>配置</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flow init</span><br></pre></td></tr></table></figure>
+<p>此命令会在项目中创建一个<code>.flowconfig</code>配置文件，具体各项的含义可以查看<a href="https://flow.org/en/docs/config/" target="_blank" rel="noopener">官方文档</a>。至此如果你的<code>React</code>项目是使用<code>create-react-app</code>命令行创建的，那么到这一步以及完成<code>flow</code>的配置了，如果不是还需要继续配置。</p>
+<p>添加<code>ignore</code><br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[ignore]</span></span><br><span class="line">.*/node_modules/.*</span><br><span class="line">.*/dist/.*</span><br><span class="line"></span><br><span class="line"><span class="section">[include]</span></span><br><span class="line"></span><br><span class="line"><span class="section">[libs]</span></span><br><span class="line"></span><br><span class="line"><span class="section">[lints]</span></span><br><span class="line"></span><br><span class="line"><span class="section">[options]</span></span><br><span class="line"></span><br><span class="line"><span class="section">[strict]</span></span><br></pre></td></tr></table></figure></p>
+<p>其它配置可以根据需要后面添加</p>
+<h1 id="配置babel"><a href="#配置babel" class="headerlink" title="配置babel"></a>配置babel</h1><p>默认情况下，浏览器是无法运行<code>flow</code>的代码的，因此在运行之前需要从<code>JavaScript</code>中移除<code>flow</code>代码，完成此任务需要<code>babel-preset-flow</code></p>
+<p>安装<code>babel-preset-flow</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev babel-preset-flow</span><br></pre></td></tr></table></figure>
+<p>配置<code>.babelrc</code></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"presets"</span>: [</span><br><span class="line">    <span class="string">"flow"</span>,</span><br><span class="line">    <span class="string">"env"</span>,</span><br><span class="line">    <span class="string">"react"</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="运行flow"><a href="#运行flow" class="headerlink" title="运行flow"></a>运行<code>flow</code></h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run flow</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -367,9 +371,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/debug/" rel="tag"># debug</a>
+            <a href="/tags/flow/" rel="tag"># flow</a>
           
-            <a href="/tags/weex/" rel="tag"># weex</a>
+            <a href="/tags/react/" rel="tag"># react</a>
+          
+            <a href="/tags/webpack/" rel="tag"># webpack</a>
           
         </div>
       
@@ -382,8 +388,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/22/hadoop伪分布式配置/" rel="next" title="hadoop伪分布式配置">
-                <i class="fa fa-chevron-left"></i> hadoop伪分布式配置
+              <a href="/2018/05/05/neo智能合约部署与调用/" rel="next" title="neo智能合约部署与调用">
+                <i class="fa fa-chevron-left"></i> neo智能合约部署与调用
               </a>
             
           </div>
@@ -391,10 +397,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/03/chrome调试webview/" rel="prev" title="chrome调试Android webview">
-                chrome调试Android webview <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -519,7 +521,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建weex应用"><span class="nav-number">2.</span> <span class="nav-text">创建weex应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装依赖"><span class="nav-number">3.</span> <span class="nav-text">安装依赖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行"><span class="nav-number">4.</span> <span class="nav-text">运行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#debug"><span class="nav-number">5.</span> <span class="nav-text">debug</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扫码"><span class="nav-number">6.</span> <span class="nav-text">扫码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#打开debug"><span class="nav-number">7.</span> <span class="nav-text">打开debug</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#在React项目中使用flow"><span class="nav-number">1.</span> <span class="nav-text">在React项目中使用flow</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在项目中添加flow"><span class="nav-number">2.</span> <span class="nav-text">在项目中添加flow</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在scripts中添加flow"><span class="nav-number">3.</span> <span class="nav-text">在scripts中添加flow</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#初始化flow配置"><span class="nav-number">4.</span> <span class="nav-text">初始化flow配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置babel"><span class="nav-number">5.</span> <span class="nav-text">配置babel</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行flow"><span class="nav-number">6.</span> <span class="nav-text">运行flow</span></a></li></ol></div>
             
 
           </div>
