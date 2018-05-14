@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="学习,计划," />
+  <meta name="keywords" content="React,jest," />
 
 
 
@@ -94,18 +94,20 @@
 
 
 
-<meta name="description" content="恐慌记得几个月之前的百度AI开发者大会，李彦宏驾驶无人驾驶汽车的那一刻，我的心情充满了激动，接踵而来的是恐慌，这种恐慌情绪一直蔓延了好久，直到几周之后我才恍然醒悟，我为什么会有这样的心情。我激动的是人类的生产力必将得到进一步的解放，而恐慌的是我毫无准备。在接下来一段时间我在不断的彷徨着，机器学习/深度学习/人工智能，这">
-<meta name="keywords" content="学习,计划">
+<meta name="description" content="jestjest是fb开发的，可以很方便集成到React的单元测试方案。要在create-react-app命令行创建的React项目中集成jest很方便，基本上是开箱即用，可以看官方的get start文档。此篇文章主要记录的是我的一个webpack的React模板项目集成时的步骤。 安装1npm install -">
+<meta name="keywords" content="React,jest">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AI计划">
-<meta property="og:url" content="http://blog.wuyaoyao.com/2017/11/24/AI计划/index.html">
+<meta property="og:title" content="React集成jest单元测试">
+<meta property="og:url" content="http://blog.wuyaoyao.com/2018/05/14/React集成jest单元测试/index.html">
 <meta property="og:site_name" content="吴尧尧的小栈">
-<meta property="og:description" content="恐慌记得几个月之前的百度AI开发者大会，李彦宏驾驶无人驾驶汽车的那一刻，我的心情充满了激动，接踵而来的是恐慌，这种恐慌情绪一直蔓延了好久，直到几周之后我才恍然醒悟，我为什么会有这样的心情。我激动的是人类的生产力必将得到进一步的解放，而恐慌的是我毫无准备。在接下来一段时间我在不断的彷徨着，机器学习/深度学习/人工智能，这对于我而言是一门很陌生和遥远的课程。对于未来，这些会有怎么样的冲击，我是否应该投">
+<meta property="og:description" content="jestjest是fb开发的，可以很方便集成到React的单元测试方案。要在create-react-app命令行创建的React项目中集成jest很方便，基本上是开箱即用，可以看官方的get start文档。此篇文章主要记录的是我的一个webpack的React模板项目集成时的步骤。 安装1npm install -D jest babel-jest babel-core regenerator">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-03T02:16:16.698Z">
+<meta property="og:image" content="http://blog.wuyaoyao.com/images/common/react_jest.jpg">
+<meta property="og:updated_time" content="2018-05-14T03:28:05.381Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AI计划">
-<meta name="twitter:description" content="恐慌记得几个月之前的百度AI开发者大会，李彦宏驾驶无人驾驶汽车的那一刻，我的心情充满了激动，接踵而来的是恐慌，这种恐慌情绪一直蔓延了好久，直到几周之后我才恍然醒悟，我为什么会有这样的心情。我激动的是人类的生产力必将得到进一步的解放，而恐慌的是我毫无准备。在接下来一段时间我在不断的彷徨着，机器学习/深度学习/人工智能，这对于我而言是一门很陌生和遥远的课程。对于未来，这些会有怎么样的冲击，我是否应该投">
+<meta name="twitter:title" content="React集成jest单元测试">
+<meta name="twitter:description" content="jestjest是fb开发的，可以很方便集成到React的单元测试方案。要在create-react-app命令行创建的React项目中集成jest很方便，基本上是开箱即用，可以看官方的get start文档。此篇文章主要记录的是我的一个webpack的React模板项目集成时的步骤。 安装1npm install -D jest babel-jest babel-core regenerator">
+<meta name="twitter:image" content="http://blog.wuyaoyao.com/images/common/react_jest.jpg">
 
 
 
@@ -134,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.wuyaoyao.com/2017/11/24/AI计划/"/>
+  <link rel="canonical" href="http://blog.wuyaoyao.com/2018/05/14/React集成jest单元测试/"/>
 
 
 
 
 
-  <title>AI计划 | 吴尧尧的小栈</title>
+  <title>React集成jest单元测试 | 吴尧尧的小栈</title>
   
 
 
@@ -273,7 +275,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.wuyaoyao.com/2017/11/24/AI计划/">
+    <link itemprop="mainEntityOfPage" href="http://blog.wuyaoyao.com/2018/05/14/React集成jest单元测试/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="吴尧尧">
@@ -290,7 +292,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">AI计划</h2>
+          <h2 class="post-title" itemprop="name headline">React集成jest单元测试</h2>
         
 
         <div class="post-meta">
@@ -302,8 +304,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-24T17:30:56+08:00">
-                2017-11-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-14T10:43:27+08:00">
+                2018-05-14
               </time>
             
 
@@ -340,9 +342,26 @@
       
 
       
-        <h1 id="恐慌"><a href="#恐慌" class="headerlink" title="恐慌"></a>恐慌</h1><p>记得几个月之前的<a href="http://star.baidu.com/" target="_blank" rel="noopener">百度AI开发者大会</a>，李彦宏驾驶无人驾驶汽车的那一刻，我的心情充满了激动，接踵而来的是恐慌，这种恐慌情绪一直蔓延了好久，直到几周之后我才恍然醒悟，我为什么会有这样的心情。我激动的是人类的生产力必将得到进一步的解放，而恐慌的是我毫无准备。在接下来一段时间我在不断的彷徨着，机器学习/深度学习/人工智能，这对于我而言是一门很陌生和遥远的课程。对于未来，这些会有怎么样的冲击，我是否应该投身而内。</p>
-<h1 id="试探"><a href="#试探" class="headerlink" title="试探"></a>试探</h1><p>遇到事情就放置不管绝不是IT从业者的习惯，这几个月虽然忙碌，但是也会抽出一些时间来了解这门陌生的学科，还准备了很多的材料，但是当我打算去学习的时候，才发现，真的好难，这门学科所有的预备知识对于我都是一片空白。迎难而上应该是大多数程序员的品质了，为了提升自己，为了战胜恐慌，特别以此文来激励自己，让自己能有坚定的去从头开始，话几个月入门这门学科。</p>
-<h1 id="加油"><a href="#加油" class="headerlink" title="加油"></a>加油</h1><p>待补充…</p>
+        <h1 id="jest"><a href="#jest" class="headerlink" title="jest"></a>jest</h1><p><code>jest</code>是<code>fb</code>开发的，可以很方便集成到<code>React</code>的单元测试方案。要在<code>create-react-app</code>命令行创建的<code>React</code>项目中集成<code>jest</code>很方便，基本上是开箱即用，可以看官方的<code>get start</code>文档。此篇文章主要记录的是我的一个<code>webpack</code>的<code>React</code>模板项目集成时的步骤。</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -D jest babel-jest babel-core regenerator-runtime babel-preset-jest</span><br></pre></td></tr></table></figure>
+<h1 id="添加babel配置"><a href="#添加babel配置" class="headerlink" title="添加babel配置"></a>添加<code>babel</code>配置</h1><p>打开<code>.babelrc</code>文件，并添加<code>env</code>配置项：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"presets"</span>: [</span><br><span class="line">    <span class="string">"stage-3"</span>,</span><br><span class="line">    <span class="string">"flow"</span>,</span><br><span class="line">    <span class="string">"react"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"plugins"</span>: [</span><br><span class="line">    <span class="string">"transform-decorators-legacy"</span>,</span><br><span class="line">    <span class="string">"transform-class-properties"</span>,</span><br><span class="line">    [</span><br><span class="line">      <span class="string">"import"</span>,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">"libraryName"</span>: <span class="string">"antd"</span>,</span><br><span class="line">        <span class="attr">"style"</span>: <span class="literal">true</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"env"</span>: &#123;</span><br><span class="line">    <span class="attr">"test"</span>: &#123;</span><br><span class="line">      <span class="attr">"plugins"</span>: [</span><br><span class="line">        <span class="string">"transform-es2015-modules-commonjs"</span></span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="添加package-json配置"><a href="#添加package-json配置" class="headerlink" title="添加package.json配置"></a>添加<code>package.json</code>配置</h1><p>在<code>package.json</code>的<code>scripts</code>中添加<code>test</code>配置项<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;test&quot;: &quot;jest&quot;</span><br></pre></td></tr></table></figure></p>
+<h1 id="添加测试目录"><a href="#添加测试目录" class="headerlink" title="添加测试目录"></a>添加测试目录</h1><p>在项目根目录下添加一个目录<code>__test__</code>，后面单元测试的文件都会放在这个目录下，<code>jest</code>默认会运行此目录下的所有的单元测试用例，也可以通过命令行指定运行特定的单元测试。</p>
+<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><p>新建一个文件<code>add.js</code>，并定义一个方法:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> add = <span class="function">(<span class="params">x,y</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在测试目录，创建测试文件<code>add.spec.js</code>，并添加测试</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; add &#125; <span class="keyword">from</span> <span class="string">'../render/utils/add'</span>;</span><br><span class="line"></span><br><span class="line">test(<span class="string">'add(3,2): '</span>, () =&gt; &#123;</span><br><span class="line">  expect(add(<span class="number">3</span>, <span class="number">2</span>)).toBe(<span class="number">5</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>通过命令行，运行测试用例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+<p>也可以通过制定文件的方式运行，这样其它的测试用例就不会被运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run <span class="built_in">test</span> __test__/add.spec.js</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<p align="center"><img src="/images/common/react_jest.jpg"></p>
+
+
+
+<p><a href="https://facebook.github.io/jest/docs/en/getting-started.html" target="_blank" rel="noopener">官网传送门</a></p>
 
       
     </div>
@@ -360,9 +379,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/学习/" rel="tag"># 学习</a>
+            <a href="/tags/React/" rel="tag"># React</a>
           
-            <a href="/tags/计划/" rel="tag"># 计划</a>
+            <a href="/tags/jest/" rel="tag"># jest</a>
           
         </div>
       
@@ -375,8 +394,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/22/开始/" rel="next" title="开始">
-                <i class="fa fa-chevron-left"></i> 开始
+              <a href="/2018/05/14/neo钱包账号/" rel="next" title="neo钱包账号">
+                <i class="fa fa-chevron-left"></i> neo钱包账号
               </a>
             
           </div>
@@ -384,10 +403,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/11/区块链vs数据库/" rel="prev" title="区块链vs数据库">
-                区块链vs数据库 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -512,7 +527,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#恐慌"><span class="nav-number">1.</span> <span class="nav-text">恐慌</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#试探"><span class="nav-number">2.</span> <span class="nav-text">试探</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#加油"><span class="nav-number">3.</span> <span class="nav-text">加油</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#jest"><span class="nav-number">1.</span> <span class="nav-text">jest</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加babel配置"><span class="nav-number">3.</span> <span class="nav-text">添加babel配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加package-json配置"><span class="nav-number">4.</span> <span class="nav-text">添加package.json配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加测试目录"><span class="nav-number">5.</span> <span class="nav-text">添加测试目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#示例"><span class="nav-number">6.</span> <span class="nav-text">示例</span></a></li></ol></div>
             
 
           </div>
