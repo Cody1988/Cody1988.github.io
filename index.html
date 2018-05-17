@@ -1836,19 +1836,15 @@ GraphQL又是faceb
    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
    
        <script type="text/javascript">
-           function ShowGitment(){
-               document.getElementById("gitment-display-button").style.display = "none";
-               document.getElementById("gitment-container").style.display = "block";
-               var gitment = new Gitment({
-                   id: document.location.href, 
-                   owner: 'Cody1988',
-                   repo: '',
-                   oauth: {
-                       client_id: '1d894a668f8e718e46cb',
-                       client_secret: 'e184cc740502afc3151faeeaff6487656b63a272',
-                   }});
-               gitment.render('gitment-container');
-           }
+           var gitment = new Gitment({
+               id: window.location.pathname, 
+               owner: 'Cody1988',
+               repo: '',
+               oauth: {
+                   client_id: '1d894a668f8e718e46cb',
+                   client_secret: 'e184cc740502afc3151faeeaff6487656b63a272',
+               }});
+           gitment.render('gitment-container');
        </script>
    
 
