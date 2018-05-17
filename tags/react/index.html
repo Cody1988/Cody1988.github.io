@@ -601,9 +601,53 @@
            var gitment = new Gitment({
                id: window.location.pathname, 
                owner: 'Cody1988',
-               repo: '',
+               repo: 'git@github.com:Cody1988/wuyaoyao_blog_gitment.git',
                oauth: {
                    client_id: '1d894a668f8e718e46cb',
+                   client_secret: 'e184cc740502afc3151faeeaff6487656b63a272',
+               }});
+           gitment.render('gitment-container');
+       </script>
+   
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+  client_id: '1d894a668f8e718e46cb',
                    client_secret: 'e184cc740502afc3151faeeaff6487656b63a272',
                }});
            gitment.render('gitment-container');
