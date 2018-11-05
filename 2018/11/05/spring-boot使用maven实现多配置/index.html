@@ -81,7 +81,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="区块链,neo,智能合约," />
+  <meta name="keywords" content="-- spring boot -- maven," />
 
 
 
@@ -97,18 +97,20 @@
 
 
 
-<meta name="description" content="Neo 智能合约部署使用官方WooLong的demo来部署第一个智能合约  说明：在使用WooLong之前，应该对程序稍微做一些修改，哪怕只是改一下字符串；这个我在测试的时候遇到一个坑，直接使用官方的demo，发布后根据ScriptHash查找发现作者版本都不是我填写的那样，后来才知道，ScriptHash是根据合约脚">
-<meta name="keywords" content="区块链,neo,智能合约">
+<meta name="description" content="说明通常在项目开发中，我们需要在不同的运行环境中运行，如果:dev，test，snapshot，release等。Spring Boot项目中在不同的环境下面，可能同一个配置参数会有不同的值，我们通常将这些值配置到不同环境下对应的文件中。比如通常情况下，通用的配置都放在application.properties，而不">
+<meta name="keywords" content="-- spring boot -- maven">
 <meta property="og:type" content="article">
-<meta property="og:title" content="neo智能合约部署与调用">
-<meta property="og:url" content="http://blog.wuyaoyao.com/2018/05/05/neo智能合约部署与调用/index.html">
+<meta property="og:title" content="spring boot 使用maven profiles实现多配置">
+<meta property="og:url" content="http://blog.wuyaoyao.com/2018/11/05/spring-boot使用maven实现多配置/index.html">
 <meta property="og:site_name" content="吴尧尧的小栈">
-<meta property="og:description" content="Neo 智能合约部署使用官方WooLong的demo来部署第一个智能合约  说明：在使用WooLong之前，应该对程序稍微做一些修改，哪怕只是改一下字符串；这个我在测试的时候遇到一个坑，直接使用官方的demo，发布后根据ScriptHash查找发现作者版本都不是我填写的那样，后来才知道，ScriptHash是根据合约脚本的二进制码产生的。如果不修改，那么最终根据ScriptHash查找的可能不是你">
+<meta property="og:description" content="说明通常在项目开发中，我们需要在不同的运行环境中运行，如果:dev，test，snapshot，release等。Spring Boot项目中在不同的环境下面，可能同一个配置参数会有不同的值，我们通常将这些值配置到不同环境下对应的文件中。比如通常情况下，通用的配置都放在application.properties，而不同环境下对应的配置为application-xxx.properties；比如d">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-10T07:02:49.336Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/627047c4gy1fwxgkadj8ej20nm0mkq4m.jpg">
+<meta property="og:updated_time" content="2018-11-05T12:32:53.641Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="neo智能合约部署与调用">
-<meta name="twitter:description" content="Neo 智能合约部署使用官方WooLong的demo来部署第一个智能合约  说明：在使用WooLong之前，应该对程序稍微做一些修改，哪怕只是改一下字符串；这个我在测试的时候遇到一个坑，直接使用官方的demo，发布后根据ScriptHash查找发现作者版本都不是我填写的那样，后来才知道，ScriptHash是根据合约脚本的二进制码产生的。如果不修改，那么最终根据ScriptHash查找的可能不是你">
+<meta name="twitter:title" content="spring boot 使用maven profiles实现多配置">
+<meta name="twitter:description" content="说明通常在项目开发中，我们需要在不同的运行环境中运行，如果:dev，test，snapshot，release等。Spring Boot项目中在不同的环境下面，可能同一个配置参数会有不同的值，我们通常将这些值配置到不同环境下对应的文件中。比如通常情况下，通用的配置都放在application.properties，而不同环境下对应的配置为application-xxx.properties；比如d">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/627047c4gy1fwxgkadj8ej20nm0mkq4m.jpg">
 
 
 
@@ -137,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.wuyaoyao.com/2018/05/05/neo智能合约部署与调用/"/>
+  <link rel="canonical" href="http://blog.wuyaoyao.com/2018/11/05/spring-boot使用maven实现多配置/"/>
 
 
 
 
 
-  <title>neo智能合约部署与调用 | 吴尧尧的小栈</title>
+  <title>spring boot 使用maven profiles实现多配置 | 吴尧尧的小栈</title>
   
 
 
@@ -301,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.wuyaoyao.com/2018/05/05/neo智能合约部署与调用/">
+    <link itemprop="mainEntityOfPage" href="http://blog.wuyaoyao.com/2018/11/05/spring-boot使用maven实现多配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="吴尧尧">
@@ -318,7 +320,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">neo智能合约部署与调用</h2>
+          <h2 class="post-title" itemprop="name headline">spring boot 使用maven profiles实现多配置</h2>
         
 
         <div class="post-meta">
@@ -330,8 +332,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T15:22:11+08:00">
-                2018-05-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-05T20:31:46+08:00">
+                2018-11-05
               </time>
             
 
@@ -368,31 +370,23 @@
       
 
       
-        <h1 id="Neo-智能合约部署"><a href="#Neo-智能合约部署" class="headerlink" title="Neo 智能合约部署"></a>Neo 智能合约部署</h1><p>使用官方<code>WooLong</code>的demo来部署第一个智能合约</p>
-<blockquote>
-<p>说明：<br>在使用<code>WooLong</code>之前，应该对程序稍微做一些修改，哪怕只是改一下字符串；这个我在测试的时候遇到一个坑，直接使用官方的demo，发布后根据<code>ScriptHash</code>查找发现作者版本都不是我填写的那样，后来才知道，<code>ScriptHash</code>是根据合约脚本的二进制码产生的。如果不修改，那么最终根据<code>ScriptHash</code>查找的可能不是你部署的合约。</p>
-</blockquote>
-<h2 id="创建项目并编译"><a href="#创建项目并编译" class="headerlink" title="创建项目并编译"></a>创建项目并编译</h2><p>创建Neo项目，将<code>WooLong</code>的代码拷贝到demo中，并稍作修改。</p>
-<p align="center"><image src="/images/neo智能合约调用/create-neo-contract-project.jpg"></image></p>
-
-<h2 id="打开neo-gui开发者版本"><a href="#打开neo-gui开发者版本" class="headerlink" title="打开neo-gui开发者版本"></a>打开neo-gui开发者版本</h2><p>对于开发者，官方建议使用coz提供的开发版<a href="https://github.com/CityOfZion/neo-gui-developer" target="_blank" rel="noopener">neo-gui</a>，clone代码下来，并通过<code>visual studio 2017</code>编译项目，然后按照官方文档同步<code>testnet</code>的区块，推荐使用离线同步包。<a href="http://docs.neo.org/zh-cn/network/syncblocks.html" target="_blank" rel="noopener">参考文档</a>。</p>
-<blockquote>
-<p>来自文档的坑<br>那么这里又有了一个坑，coz在github中提供的这个<code>neo-gui-developer</code>代码，在调用智能合约的时候，会无法添加参数，因此我们需要到<code>neo</code><a href="https://github.com/neo-project/neo-gui" target="_blank" rel="noopener">官方的neo-gui</a>，将项目下面<code>UI</code>目录下的以<code>ParametersEditor</code>开头的几个文件全部都拷贝进来。</p>
-</blockquote>
-<h2 id="打开部署智能合约界面，部署合约"><a href="#打开部署智能合约界面，部署合约" class="headerlink" title="打开部署智能合约界面，部署合约"></a>打开部署智能合约界面，部署合约</h2><p align="center"><image src="/images/neo智能合约调用/depoly.jpg"></image></p>
-
-<p>点击[部署]按钮部署合约</p>
-<h2 id="拷贝ScriptHash"><a href="#拷贝ScriptHash" class="headerlink" title="拷贝ScriptHash"></a>拷贝ScriptHash</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0x9499e029baba1221f903476b23a4d59866bb76e1</span><br></pre></td></tr></table></figure>
-<h2 id="试运行并调用"><a href="#试运行并调用" class="headerlink" title="试运行并调用"></a>试运行并调用</h2><p>部署完成并拷贝<code>ScriptHash</code>后，会弹出<code>调用合约</code>界面，先点击<code>试运行</code>,如果没有报错，就可以点击<code>调用</code>，这是在<code>neo-gui</code>-&gt; <code>交易记录</code>中会产生一个新的交易记录，记录开始是<code>未确认</code>状态，稍后会返回已经确认的节点数目。</p>
-<p align="center"><image src="/images/neo智能合约调用/depoly-invoke.jpg"></image></p>
-
-<p>这时，查看一下<code>gas</code>，你会发现发布合约消耗了一些<code>gas</code>。</p>
-<h1 id="智能合约调用"><a href="#智能合约调用" class="headerlink" title="智能合约调用"></a>智能合约调用</h1><p>打开<code>高级</code>-&gt;<code>调用合约</code>-&gt;<code>函数调用</code>，填写<code>ScriptHash</code>并查找，会查找到我们之前发布的合约。</p>
-<p>填写调用合约需要的参数。</p>
-<p align="center"><image src="/images/neo智能合约调用/set-params.jpg"></image></p>
-
-<p>填写完成后，点击<code>调用</code>，查看交易记录，有一条新的<code>未确认</code>。</p>
-<p>至此，合约的部署和发布算是完成了，其中还有很多细节未完善，只是重点说了自己在爬坑的过程中消耗时间最多的几个小细节，大的方向，各位还是先看官方文档，然后慢慢爬坑吧。</p>
+        <h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>通常在项目开发中，我们需要在不同的运行环境中运行，如果:<code>dev</code>，<code>test</code>，<code>snapshot</code>，<code>release</code>等。<code>Spring Boot</code>项目中在不同的环境下面，可能同一个配置参数会有不同的值，我们通常将这些值配置到不同环境下对应的文件中。比如通常情况下，通用的配置都放在<code>application.properties</code>，而不同环境下对应的配置为<code>application-xxx.properties</code>；比如<code>dev</code>环境下对应的配置为<code>application-dev.properties</code>。</p>
+<h1 id="如何是配置文件生效"><a href="#如何是配置文件生效" class="headerlink" title="如何是配置文件生效"></a>如何是配置文件生效</h1><p>在不做任何处理的情况下启动 <code>spring boot</code>应用，只有配置 <code>application.properties</code>    文件被加载，如果希望加载不同的配置文件那么需要配置<code>spring.profiles.active=xxx</code>，其中<code>xxx</code>对应<code>dev</code>,<code>test</code>等。</p>
+<p>通常可以在运行的命令行中制定参数，来使配置生效，比如:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar --spring.profiles.active=dev</span><br></pre></td></tr></table></figure>
+<p>具体可以参考<a href="http://blog.wuyaoyao.xyz/2018/07/13/spring-boot-%E4%B9%8B%E5%A4%9A%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/#more" target="_blank" rel="noopener">spring boot 之多配置文件</a></p>
+<h1 id="使用maven配置文件pom-xml类配置，并执行不同的配置"><a href="#使用maven配置文件pom-xml类配置，并执行不同的配置" class="headerlink" title="使用maven配置文件pom.xml类配置，并执行不同的配置"></a>使用<code>maven</code>配置文件<code>pom.xml</code>类配置，并执行不同的配置</h1><p>首先在<code>pom.xml</code>中添加<code>profiles</code>配置项，它是与<code>&lt;dependencies&gt;</code>是平级的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;profiles&gt;</span><br><span class="line">	&lt;profile&gt;</span><br><span class="line">		&lt;id&gt;dev&lt;/id&gt;</span><br><span class="line">		&lt;properties&gt;</span><br><span class="line">			&lt;filter.env&gt;dev&lt;/filter.env&gt;</span><br><span class="line">		&lt;/properties&gt;</span><br><span class="line">		&lt;activation&gt;</span><br><span class="line">			&lt;activeByDefault&gt;true&lt;/activeByDefault&gt;</span><br><span class="line">		&lt;/activation&gt;</span><br><span class="line">	&lt;/profile&gt;</span><br><span class="line">	&lt;profile&gt;</span><br><span class="line">		&lt;id&gt;snapshot&lt;/id&gt;</span><br><span class="line">		&lt;properties&gt;</span><br><span class="line">			&lt;filter.env&gt;dev&lt;/filter.env&gt;</span><br><span class="line">		&lt;/properties&gt;</span><br><span class="line">	&lt;/profile&gt;</span><br><span class="line">	&lt;profile&gt;</span><br><span class="line">		&lt;id&gt;prod&lt;/id&gt;</span><br><span class="line">		&lt;properties&gt;</span><br><span class="line">			&lt;filter.env&gt;prod&lt;/filter.env&gt;</span><br><span class="line">		&lt;/properties&gt;</span><br><span class="line">	&lt;/profile&gt;</span><br><span class="line">&lt;/profiles&gt;</span><br></pre></td></tr></table></figure>
+<p>在<code>&lt;build&gt;</code>下添加配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;resources&gt;</span><br><span class="line">	&lt;resource&gt;</span><br><span class="line">		&lt;directory&gt;src/main/resources&lt;/directory&gt;</span><br><span class="line">		&lt;filtering&gt;true&lt;/filtering&gt;</span><br><span class="line">	&lt;/resource&gt;</span><br><span class="line">	&lt;resource&gt;</span><br><span class="line">		&lt;filtering&gt;true&lt;/filtering&gt;</span><br><span class="line">		&lt;directory&gt;src/main/resources&lt;/directory&gt;</span><br><span class="line">		&lt;includes&gt;</span><br><span class="line">			&lt;include&gt;application-$&#123;filter.env&#125;.properties&lt;/include&gt;</span><br><span class="line">			&lt;include&gt;application.properties&lt;/include&gt;</span><br><span class="line">		&lt;/includes&gt;</span><br><span class="line">	&lt;/resource&gt;</span><br><span class="line">&lt;/resources&gt;</span><br></pre></td></tr></table></figure>
+<p>在<code>application.properties</code>中添加配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring.profiles.active=@filter.env@</span><br></pre></td></tr></table></figure>
+<p>其中 <code>@filter.env@</code>为指定的环境。</p>
+<p>这个配置是覆盖默认的<code>resources</code>加载方式，此处会加载<code>application-properties</code>以及<code>application-xxx.properties</code>配置文件。<br>其中参数<code>filter.env</code>为上面<code>profile</code>中定义的，我们再运行的时候，会指定。此时，<code>maven</code>配置中就包括了多个配置，如果需要指定某个配置进行打包，则可以使用命令行<code>mvn clean package -P xxx</code>比如 <code>dev</code>环境为</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn package -P dev</span><br></pre></td></tr></table></figure>
+<p>即可以使用指定的配置进行打包。</p>
+<h1 id="在intellij中使用特定配置"><a href="#在intellij中使用特定配置" class="headerlink" title="在intellij中使用特定配置"></a>在intellij中使用特定配置</h1><p><code>intellij</code> 对<code>maven</code>的多<code>profile</code>有很好的支持。如果要运行哪个环境的配置，只需要在<code>Maven Projects</code> -&gt; <code>Profiles</code>中勾选响应的配置即可。</p>
+<p><img width="500" src="https://ws1.sinaimg.cn/large/627047c4gy1fwxgkadj8ej20nm0mkq4m.jpg"></p>
 
       
     </div>
@@ -410,11 +404,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/区块链/" rel="tag"># 区块链</a>
-          
-            <a href="/tags/neo/" rel="tag"># neo</a>
-          
-            <a href="/tags/智能合约/" rel="tag"># 智能合约</a>
+            <a href="/tags/spring-boot-maven/" rel="tag"># -- spring boot -- maven</a>
           
         </div>
       
@@ -427,8 +417,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/03/chrome调试webview/" rel="next" title="chrome调试Android webview">
-                <i class="fa fa-chevron-left"></i> chrome调试Android webview
+              <a href="/2018/10/27/mysql-emoji表情/" rel="next" title="mysql-emoji表情">
+                <i class="fa fa-chevron-left"></i> mysql-emoji表情
               </a>
             
           </div>
@@ -436,10 +426,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/08/React中集成flow/" rel="prev" title="React中集成flow">
-                React中集成flow <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -574,7 +560,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Neo-智能合约部署"><span class="nav-number">1.</span> <span class="nav-text">Neo 智能合约部署</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建项目并编译"><span class="nav-number">1.1.</span> <span class="nav-text">创建项目并编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#打开neo-gui开发者版本"><span class="nav-number">1.2.</span> <span class="nav-text">打开neo-gui开发者版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#打开部署智能合约界面，部署合约"><span class="nav-number">1.3.</span> <span class="nav-text">打开部署智能合约界面，部署合约</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拷贝ScriptHash"><span class="nav-number">1.4.</span> <span class="nav-text">拷贝ScriptHash</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#试运行并调用"><span class="nav-number">1.5.</span> <span class="nav-text">试运行并调用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#智能合约调用"><span class="nav-number">2.</span> <span class="nav-text">智能合约调用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#说明"><span class="nav-number">1.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何是配置文件生效"><span class="nav-number">2.</span> <span class="nav-text">如何是配置文件生效</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用maven配置文件pom-xml类配置，并执行不同的配置"><span class="nav-number">3.</span> <span class="nav-text">使用maven配置文件pom.xml类配置，并执行不同的配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在intellij中使用特定配置"><span class="nav-number">4.</span> <span class="nav-text">在intellij中使用特定配置</span></a></li></ol></div>
             
 
           </div>
