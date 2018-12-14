@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta name="baidu-site-verification" content="gmbwimzBkP" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="gmbwimzBkP" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="mongodb,数据库," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="安装123456789101112131415161718192021222324# 解压&amp;gt; tar xzvf mongodb-linux-x86_64-v4.0-latest.tgz# 拷贝到/usr/local下&amp;gt; mv mongodb-linux-x86_64-4.0.1-80-g44">
+<meta name="keywords" content="mongodb,数据库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mongodb笔记-安装与配置">
+<meta property="og:url" content="http://blog.wuyaoyao.com/2018/12/14/mongodb笔记-安装与配置/index.html">
+<meta property="og:site_name" content="吴尧尧的小栈">
+<meta property="og:description" content="安装123456789101112131415161718192021222324# 解压&amp;gt; tar xzvf mongodb-linux-x86_64-v4.0-latest.tgz# 拷贝到/usr/local下&amp;gt; mv mongodb-linux-x86_64-4.0.1-80-g44b5c11973 /usr/local/mongodb4.0.1# 配置环境变量&amp;gt; vi">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-14T06:23:52.943Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mongodb笔记-安装与配置">
+<meta name="twitter:description" content="安装123456789101112131415161718192021222324# 解压&amp;gt; tar xzvf mongodb-linux-x86_64-v4.0-latest.tgz# 拷贝到/usr/local下&amp;gt; mv mongodb-linux-x86_64-4.0.1-80-g44b5c11973 /usr/local/mongodb4.0.1# 配置环境变量&amp;gt; vi">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.wuyaoyao.com/2018/12/14/mongodb笔记-安装与配置/"/>
+
+
+
+
+
+  <title>mongodb笔记-安装与配置 | 吴尧尧的小栈</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?cdd5164d84e98251d15b66be8c77fc46";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=65839989";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1273689091&web_id=1273689091" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">吴尧尧的小栈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">岁月静好，流年无殇</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.wuyaoyao.com/2018/12/14/mongodb笔记-安装与配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="吴尧尧">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="吴尧尧的小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">mongodb笔记-安装与配置</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-14T14:23:33+08:00">
+                2018-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 解压</span></span><br><span class="line">&gt; tar xzvf mongodb-linux-x86_64-v4.0-latest.tgz</span><br><span class="line"><span class="comment"># 拷贝到/usr/local下</span></span><br><span class="line">&gt; mv mongodb-linux-x86_64-4.0.1-80-g44b5c11973 /usr/<span class="built_in">local</span>/mongodb4.0.1</span><br><span class="line"><span class="comment"># 配置环境变量</span></span><br><span class="line">&gt; vi ~/.bash_profile</span><br><span class="line"></span><br><span class="line"><span class="comment"># mongodb</span></span><br><span class="line"><span class="built_in">export</span> MONGODB_HOME=/usr/<span class="built_in">local</span>/mongodb4.0.1</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$MONGODB_HOME</span>/bin</span><br><span class="line"></span><br><span class="line"><span class="comment"># 让环境配置生效</span></span><br><span class="line">&gt; <span class="built_in">source</span> ~/.bash_profile</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看mongo版本</span></span><br><span class="line">&gt; mongo --version</span><br><span class="line"></span><br><span class="line">MongoDB shell version v4.0.1-80-g44b5c11973</span><br><span class="line">git version: 44b5c1197367d6cda1ad75d2f0860c3d3683b86e</span><br><span class="line">allocator: tcmalloc</span><br><span class="line">modules: none</span><br><span class="line">build environment:</span><br><span class="line">    distarch: x86_64</span><br><span class="line">    target_arch: x86_64</span><br></pre></td></tr></table></figure>
+<h1 id="mongodb-配置"><a href="#mongodb-配置" class="headerlink" title="mongodb 配置"></a>mongodb 配置</h1><p>创建存储位置、log目录并启动 <code>mongod</code> 服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 创建存储位置</span></span><br><span class="line">&gt; mkdir -p /data/mongodb/data/db</span><br><span class="line"><span class="comment"># 创建log目录</span></span><br><span class="line">&gt; mkdir -p /var/<span class="built_in">log</span>/mongodb</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动 mongod，加上 --fork 参数表示后台启动</span></span><br><span class="line">&gt; mongod --dbpath /data/mongodb/data/db --logpath=/var/<span class="built_in">log</span>/mongodb/mongod.log --logappend</span><br><span class="line"><span class="comment"># 后台启动</span></span><br><span class="line">&gt; mongod --dbpath /data/mongodb/data/db --logpath=/var/<span class="built_in">log</span>/mongodb/mongod.log --logappend --fork</span><br><span class="line"></span><br><span class="line"><span class="comment"># 连接 mongod 服务</span></span><br><span class="line">&gt; mongo</span><br></pre></td></tr></table></figure>
+<h2 id="创建root用户"><a href="#创建root用户" class="headerlink" title="创建root用户"></a>创建root用户</h2><p>经过以上步骤，就可以对 <code>mongodb</code> 进行操作了，在实际项目中，通常需要创建 <code>root</code>用户，以及各个库的管理员账号。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">mongo&gt; use admin</span><br><span class="line">switched to db admin</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建root</span></span><br><span class="line">mongo&gt; db.createUser(&#123;user: <span class="string">"root"</span>,<span class="built_in">pwd</span>:<span class="string">"123456"</span>,roles:[<span class="string">"root"</span>,<span class="string">"userAdminAnyDatabase"</span>]&#125;)</span><br><span class="line">Successfully added user: &#123; <span class="string">"user"</span> : <span class="string">"root"</span>, <span class="string">"roles"</span> : [ <span class="string">"root"</span>, <span class="string">"userAdminAnyDatabase"</span> ] &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看创建的用户</span></span><br><span class="line">mongo&gt; db.system.users.find().pretty();</span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">"_id"</span> : <span class="string">"admin.root"</span>,</span><br><span class="line">	<span class="string">"user"</span> : <span class="string">"root"</span>,</span><br><span class="line">	<span class="string">"db"</span> : <span class="string">"admin"</span>,</span><br><span class="line">	<span class="string">"credentials"</span> : &#123;</span><br><span class="line">		<span class="string">"SCRAM-SHA-1"</span> : &#123;</span><br><span class="line">			<span class="string">"iterationCount"</span> : 10000,</span><br><span class="line">			<span class="string">"salt"</span> : <span class="string">"H8uuWFHR/Gc/g1m+68HfXw=="</span>,</span><br><span class="line">			<span class="string">"storedKey"</span> : <span class="string">"kPhAKKeOBXKyRLQEF1RNMU61x5A="</span>,</span><br><span class="line">			<span class="string">"serverKey"</span> : <span class="string">"+NWpzT1U710X/QsmeDwmfvy84mo="</span></span><br><span class="line">		&#125;,</span><br><span class="line">		<span class="string">"SCRAM-SHA-256"</span> : &#123;</span><br><span class="line">			<span class="string">"iterationCount"</span> : 15000,</span><br><span class="line">			<span class="string">"salt"</span> : <span class="string">"WY6weLUQ65phyhnLXhc5BKb+IXRMzpR8kK98Ew=="</span>,</span><br><span class="line">			<span class="string">"storedKey"</span> : <span class="string">"VNfejvGnhNPQVB3BmRtBkB+uw761Qa9trVdg+iyaXfs="</span>,</span><br><span class="line">			<span class="string">"serverKey"</span> : <span class="string">"DVkHNrhSDspAUg76V3vioJaFhlHpyLTlVi7iO2BJuYQ="</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">"roles"</span> : [</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="string">"role"</span> : <span class="string">"root"</span>,</span><br><span class="line">			<span class="string">"db"</span> : <span class="string">"admin"</span></span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="string">"role"</span> : <span class="string">"userAdminAnyDatabase"</span>,</span><br><span class="line">			<span class="string">"db"</span> : <span class="string">"admin"</span></span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="使用配置文件设置-mongod-启动参数"><a href="#使用配置文件设置-mongod-启动参数" class="headerlink" title="使用配置文件设置 mongod 启动参数"></a>使用配置文件设置 mongod 启动参数</h2><p>首先关闭之前开启的 <code>mongod</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 关闭 mongod</span></span><br><span class="line">mongo&gt; db.shutdownServer();</span><br></pre></td></tr></table></figure>
+<h3 id="创建配置文件并编辑"><a href="#创建配置文件并编辑" class="headerlink" title="创建配置文件并编辑"></a>创建配置文件并编辑</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; vi /etc/mongodb.conf</span><br></pre></td></tr></table></figure>
+<p>配置文件内容，<a href="http://docs.mongodb.org/manual/reference/configuration-options/" target="_blank" rel="noopener">配置文件原文位置</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"># mongod.conf</span><br><span class="line"></span><br><span class="line"># for documentation of all options, see:</span><br><span class="line">#   http://docs.mongodb.org/manual/reference/configuration-options/</span><br><span class="line"></span><br><span class="line"># 日志文件存储位置</span><br><span class="line">systemLog:</span><br><span class="line">  destination: file</span><br><span class="line">  logAppend: true</span><br><span class="line">  path: /var/log/mongodb/mongod.log</span><br><span class="line"></span><br><span class="line"># 数据存储位置</span><br><span class="line">storage:</span><br><span class="line">  dbPath: /data/mongodb/data/db</span><br><span class="line"># journal:</span><br><span class="line">#   enabled: true</span><br><span class="line">#  engine:</span><br><span class="line">#  wiredTiger:</span><br><span class="line"></span><br><span class="line"># 后台启动</span><br><span class="line">processManagement:</span><br><span class="line">  fork: true  # fork and run in background</span><br><span class="line"># pidFilePath: /var/run/mongodb/mongod.pid</span><br><span class="line"># timeZoneInfo: /usr/share/zoneinfo</span><br><span class="line"></span><br><span class="line"># 绑定到所有的网卡</span><br><span class="line">net:</span><br><span class="line">  port: 27017</span><br><span class="line">  bindIp: 0.0.0.0  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#security:</span><br><span class="line"></span><br><span class="line">#operationProfiling:</span><br><span class="line"></span><br><span class="line">#replication:</span><br><span class="line"></span><br><span class="line">#sharding:</span><br><span class="line"></span><br><span class="line">## Enterprise-Only Options</span><br><span class="line"></span><br><span class="line">#auditLog:</span><br><span class="line"></span><br><span class="line">#snmp:</span><br></pre></td></tr></table></figure>
+<h3 id="使用配置文件启动-mongod"><a href="#使用配置文件启动-mongod" class="headerlink" title="使用配置文件启动 mongod"></a>使用配置文件启动 mongod</h3><p>编辑好配置文件之后，就可以使用配置文件来设置 <code>mongod</code> 启动时的参数了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动 mongod</span></span><br><span class="line">&gt; mongod --config /etc/mongod.conf --auth</span><br><span class="line">about to fork child process, waiting until server is ready <span class="keyword">for</span> connections.</span><br><span class="line">forked process: 4679</span><br><span class="line">child process started successfully, parent exiting</span><br></pre></td></tr></table></figure>
+<h1 id="项目中使用"><a href="#项目中使用" class="headerlink" title="项目中使用"></a>项目中使用</h1><ol>
+<li><p>创建数据库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; use hello</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建用户</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">mnogo&gt; use admin;</span><br><span class="line"><span class="comment"># 授权</span></span><br><span class="line">mongo&gt; db.auth(<span class="string">"root"</span>,<span class="string">"123456"</span>);</span><br><span class="line"><span class="comment"># 创建用户</span></span><br><span class="line">mongo&gt; db.createUser(</span><br><span class="line">  &#123;</span><br><span class="line">    user: <span class="string">"hello"</span>,</span><br><span class="line">    <span class="built_in">pwd</span>: <span class="string">"hello123"</span>,</span><br><span class="line">    roles: [&#123; role: <span class="string">"readWrite"</span>, db: <span class="string">"hello_db"</span> &#125;,<span class="string">"dbAdmin"</span>,<span class="string">"dbOwner"</span>]</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">Successfully added user: &#123;</span><br><span class="line">	<span class="string">"user"</span> : <span class="string">"hello"</span>,</span><br><span class="line">	<span class="string">"roles"</span> : [</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="string">"role"</span> : <span class="string">"readWrite"</span>,</span><br><span class="line">			<span class="string">"db"</span> : <span class="string">"hello"</span></span><br><span class="line">		&#125;,</span><br><span class="line">		<span class="string">"dbAdmin"</span>,</span><br><span class="line">		<span class="string">"dbOwner"</span></span><br><span class="line">	]</span><br><span class="line"><span class="comment"># 创建的用户登录</span></span><br><span class="line">mongo&gt; <span class="built_in">exit</span></span><br><span class="line">&gt; mongo</span><br><span class="line">mongo&gt; use hello_db</span><br><span class="line"><span class="comment"># 登录授权</span></span><br><span class="line">mongo&gt; db.auth(<span class="string">"hello"</span>,<span class="string">"hello123"</span>)</span><br></pre></td></tr></table></figure>
+<p>这样就创建好了一个数据库 <code>hello_db</code>，并创建了这个数据库有读写权限的管理员 <code>hello</code></p>
+<h1 id="mongodb-系统服务配置"><a href="#mongodb-系统服务配置" class="headerlink" title="mongodb 系统服务配置"></a>mongodb 系统服务配置</h1><p>创建配置文件 <code>/etc/rc.d/init.d/mongod</code>，请添加脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">start() &#123;</span><br><span class="line">   /usr/local/mongodb4.0.1/bin/mongod  --config /etc/mongod.conf --auth</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">stop() &#123;</span><br><span class="line">    /usr/local/mongodb4.0.1/bin/mongod  --config /etc/mongod.conf --shutdown</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">case &quot;$1&quot; in</span><br><span class="line">  start)</span><br><span class="line"> start</span><br><span class="line"> ;;</span><br><span class="line"></span><br><span class="line">stop)</span><br><span class="line"> stop</span><br><span class="line"> ;;</span><br><span class="line"></span><br><span class="line">restart)</span><br><span class="line"> stop</span><br><span class="line"> start</span><br><span class="line"> ;;</span><br><span class="line">  *)</span><br><span class="line"> echo</span><br><span class="line">$&quot;Usage: $0 &#123;start|stop|restart&#125;&quot;</span><br><span class="line"> exit 1</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
+<p>保存脚本，并添加可执行权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; chmod +x /etc/rc.d/init.d/mongod</span><br></pre></td></tr></table></figure>
+<p>使用 <code>service</code> 执行服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动</span></span><br><span class="line">&gt; service mongod start</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停止</span></span><br><span class="line">&gt; service mongod stop</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启</span></span><br><span class="line">&gt; service mongod restart</span><br></pre></td></tr></table></figure>
+<p><a href="https://docs.mongodb.com/manual/reference/method/db.updateUser/" target="_blank" rel="noopener">官方文档-创建用户</a></p>
+<p><a href="https://docs.mongodb.com/manual/reference/built-in-roles/index.html#database-user-roles" target="_blank" rel="noopener">官方文档-MongoDB支持的角色</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/mongodb/" rel="tag"># mongodb</a>
+          
+            <a href="/tags/数据库/" rel="tag"># 数据库</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/14/linux笔记-logrotate日志清理/" rel="next" title="linux笔记-logrotate日志清理">
+                <i class="fa fa-chevron-left"></i> linux笔记-logrotate日志清理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+       
+         <div id="gitment-container"></div>
+       
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="吴尧尧" />
+          <p class="site-author-name" itemprop="name">吴尧尧</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mongodb-配置"><span class="nav-number">2.</span> <span class="nav-text">mongodb 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建root用户"><span class="nav-number">2.1.</span> <span class="nav-text">创建root用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用配置文件设置-mongod-启动参数"><span class="nav-number">2.2.</span> <span class="nav-text">使用配置文件设置 mongod 启动参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建配置文件并编辑"><span class="nav-number">2.2.1.</span> <span class="nav-text">创建配置文件并编辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用配置文件启动-mongod"><span class="nav-number">2.2.2.</span> <span class="nav-text">使用配置文件启动 mongod</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#项目中使用"><span class="nav-number">3.</span> <span class="nav-text">项目中使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mongodb-系统服务配置"><span class="nav-number">4.</span> <span class="nav-text">mongodb 系统服务配置</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吴尧尧</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Gemini
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+   
+   
+   
+   
+   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+   
+       <script type="text/javascript">
+           var gitment = new Gitment({
+               id: document.title, 
+               owner: 'Cody1988',
+               repo: 'wuyaoyao_blog_gitment',
+               oauth: {
+                   client_id: '1d894a668f8e718e46cb',
+                   client_secret: 'e184cc740502afc3151faeeaff6487656b63a272',
+               }});
+           gitment.render('gitment-container');
+       </script>
+   
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
