@@ -6,11 +6,11 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta name="baidu-site-verification" content="gmbwimzBkP" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta name="baidu-site-verification" content="gmbwimzBkP">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -21,8 +21,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -32,7 +32,7 @@
 
 
 
-  <meta name="baidu-site-verification" content="gmbwimzBkP" />
+  <meta name="baidu-site-verification" content="gmbwimzBkP">
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -76,28 +76,28 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="spring boot,mybatis," />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="spring boot,mybatis,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
 
 
 
 
 
 
-<meta name="description" content="前言目前在使用spring boot进行后台开发中，orm库使用的比较多的是spring data jpa，hibernate以及mybatis。我使用的最多的是mybatis，对应其它两种虽然很简洁但是在使用中老是陷入到各种纠结之中，最终还是喜欢mybatis这种操作感。 集成spring boot集成mybatis">
+<meta name="description" content="前言目前在使用spring boot进行后台开发中，orm库使用的比较多的是spring data jpa，hibernate以及mybatis。我使用的最多的是mybatis，对应其它两种虽然很简洁但是在使用中老是陷入到各种纠结之中，最终还是喜欢mybatis这种操作感。 集成spring boot集成mybatis 版本属性1234&amp;lt;properties&amp;gt;    &amp;lt;mybat">
 <meta name="keywords" content="spring boot,mybatis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="spring boot 之 mybatis">
@@ -137,7 +137,7 @@
 
 
 
-  <link rel="canonical" href="http://blog.wuyaoyao.com/2018/07/11/spring-boot-之-mybatis/"/>
+  <link rel="canonical" href="http://blog.wuyaoyao.com/2018/07/11/spring-boot-之-mybatis/">
 
 
 
@@ -202,7 +202,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">吴尧尧的小栈</span>
         <span class="logo-line-after"><i></i></span>
@@ -232,7 +232,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -242,7 +242,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -252,7 +252,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -262,7 +262,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -305,7 +305,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="吴尧尧">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -375,7 +375,7 @@
 <h2 id="spring-boot-application注解配置"><a href="#spring-boot-application注解配置" class="headerlink" title="spring boot application注解配置"></a>spring boot application注解配置</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableTransactionManagement</span></span><br><span class="line"><span class="meta">@MapperScan</span>(<span class="string">"com.cody.mickey.dao"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MickeyServerApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		SpringApplication.run(MickeyServerApplication.class, args);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="spring-boot-配置文件配置"><a href="#spring-boot-配置文件配置" class="headerlink" title="spring boot 配置文件配置"></a>spring boot 配置文件配置</h2><p><code>spring boot</code> 配置文件配置，其中指定了使用的数据库<code>用户名</code>，<code>密码</code>，<code>数据库名称</code>，<code>mapper</code>文件位置，<code>mybatis config</code>文件位置<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line"><span class="attr">  datasource:</span></span><br><span class="line"><span class="attr">    driver-class-name:</span> <span class="string">com.mysql.jdbc.Driver</span></span><br><span class="line"><span class="attr">    username:</span> <span class="string">db_username</span></span><br><span class="line"><span class="attr">    password:</span> <span class="string">db_password</span></span><br><span class="line"><span class="attr">    url:</span> <span class="attr">jdbc:mysql://localhost:3306/testdb?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false</span></span><br><span class="line"><span class="attr">mybatis:</span></span><br><span class="line"><span class="attr">  mapper-locations:</span> <span class="attr">classpath:mybatis/mapper/*.xml</span></span><br><span class="line"><span class="attr">  config-location:</span> <span class="attr">classpath:mybatis/mybatis-config.xml</span></span><br><span class="line"><span class="attr">  type-aliases-package:</span> <span class="string">com.cody.mickey.entity;com.cody.mickey.form</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="mybatis-config-xml"><a href="#mybatis-config-xml" class="headerlink" title="mybatis-config.xml"></a>mybatis-config.xml</h2><p>所有的 <code>mapper</code> 文件，以及 <code>mybatis-config.xml</code>文件都放在 <code>resources/mybatis</code>下。 <code>mybatis-config.xml</code> 中定义了一些常用的类型，这样就不需要再<code>mapper</code>文件中写这些类的全称了</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span><br><span class="line"><span class="meta">&lt;!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 将下划线转为驼峰写法 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"mapUnderscoreToCamelCase"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"logImpl"</span> <span class="attr">value</span>=<span class="string">"STDOUT_LOGGING"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">typeAliases</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">alias</span>=<span class="string">"Integer"</span> <span class="attr">type</span>=<span class="string">"java.lang.Integer"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">alias</span>=<span class="string">"Long"</span> <span class="attr">type</span>=<span class="string">"java.lang.Long"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">alias</span>=<span class="string">"HashMap"</span> <span class="attr">type</span>=<span class="string">"java.util.HashMap"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">alias</span>=<span class="string">"LinkedHashMap"</span> <span class="attr">type</span>=<span class="string">"java.util.LinkedHashMap"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">alias</span>=<span class="string">"ArrayList"</span> <span class="attr">type</span>=<span class="string">"java.util.ArrayList"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">alias</span>=<span class="string">"LinkedList"</span> <span class="attr">type</span>=<span class="string">"java.util.LinkedList"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">typeAliases</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 将下划线转为驼峰写法 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"mapUnderscoreToCamelCase"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"logImpl"</span> <span class="attr">value</span>=<span class="string">"STDOUT_LOGGING"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">typeAliases</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">alias</span>=<span class="string">"Integer"</span> <span class="attr">type</span>=<span class="string">"java.lang.Integer"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">alias</span>=<span class="string">"Long"</span> <span class="attr">type</span>=<span class="string">"java.lang.Long"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">alias</span>=<span class="string">"HashMap"</span> <span class="attr">type</span>=<span class="string">"java.util.HashMap"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">alias</span>=<span class="string">"LinkedHashMap"</span> <span class="attr">type</span>=<span class="string">"java.util.LinkedHashMap"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">alias</span>=<span class="string">"ArrayList"</span> <span class="attr">type</span>=<span class="string">"java.util.ArrayList"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">typeAlias</span> <span class="attr">alias</span>=<span class="string">"LinkedList"</span> <span class="attr">type</span>=<span class="string">"java.util.LinkedList"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">typeAliases</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>以上就完成了基本的配置</p>
 <h1 id="我的实践"><a href="#我的实践" class="headerlink" title="我的实践"></a>我的实践</h1><p>在实际项目中，通常对数据的处理包括<code>增删改查</code>4种，所以我在项目中，通常会定义一个<code>Dao</code>接口，其内容如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">IDao</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">T <span class="title">findOne</span><span class="params">(Object filter)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">List&lt;T&gt; <span class="title">list</span><span class="params">(Object filter)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(Object bean)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(Object filter)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(Object bean)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -383,7 +383,7 @@
 <h2 id="Apk-java"><a href="#Apk-java" class="headerlink" title="Apk.java"></a>Apk.java</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Apk</span> <span class="keyword">implements</span> <span class="title">Serializable</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> String packageName;</span><br><span class="line">    <span class="keyword">private</span> ApkCategory category;</span><br><span class="line">    <span class="keyword">private</span> String description;</span><br><span class="line">    <span class="comment">// 官网地址</span></span><br><span class="line">    <span class="keyword">private</span> String homepage;</span><br><span class="line">    <span class="keyword">private</span> String secretId;</span><br><span class="line">    <span class="keyword">private</span> User user;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> List&lt;Scenario&gt; scenarios;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// getters and setters</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="ApkDao-java"><a href="#ApkDao-java" class="headerlink" title="ApkDao.java"></a>ApkDao.java</h2><p><code>dao</code> 接口只需要继续 <code>IDao</code>即可，这样就默认有 <code>IDao</code> 中定义的5个方法，然后我们只需要对我们需要用到的方法，在 <code>AppMapper.xml</code> 中定义接口对应的 <code>sql</code> 操作即可</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ApkDao</span> <span class="keyword">extends</span> <span class="title">IDao</span>&lt;<span class="title">Apk</span>&gt; </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="ApkMapper-xml"><a href="#ApkMapper-xml" class="headerlink" title="ApkMapper.xml"></a>ApkMapper.xml</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span><br><span class="line"><span class="meta">&lt;!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" &gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"com.cody.mickey.dao.ApkDao"</span> &gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"bean"</span> <span class="attr">type</span>=<span class="string">"Apk"</span> <span class="attr">autoMapping</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">sql</span> <span class="attr">id</span>=<span class="string">"selectSql"</span>&gt;</span></span><br><span class="line">        SELECT * FROM t_apk</span><br><span class="line">    <span class="tag">&lt;/<span class="name">sql</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"add"</span> <span class="attr">keyProperty</span>=<span class="string">"id"</span> <span class="attr">useGeneratedKeys</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line">        INSERT INTO t_apk(</span><br><span class="line">            description</span><br><span class="line">            ,homepage</span><br><span class="line">            ,name</span><br><span class="line">            ,package_name</span><br><span class="line">            ,category_id</span><br><span class="line">            ,user_id</span><br><span class="line">            ,secret_id</span><br><span class="line">        )</span><br><span class="line">        VALUES(</span><br><span class="line">            #&#123;description&#125;</span><br><span class="line">            ,#&#123;homepage&#125;</span><br><span class="line">            ,#&#123;name&#125;</span><br><span class="line">            ,#&#123;packageName&#125;</span><br><span class="line">            ,#&#123;category.id&#125;</span><br><span class="line">            ,#&#123;user.id&#125;</span><br><span class="line">            ,#&#123;secretId&#125;</span><br><span class="line">        )</span><br><span class="line">    <span class="tag">&lt;/<span class="name">insert</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">update</span> <span class="attr">id</span>=<span class="string">"update"</span>&gt;</span></span><br><span class="line">        update t_apk</span><br><span class="line">        <span class="tag">&lt;<span class="name">set</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"description != null"</span>&gt;</span>description=#&#123;description&#125;<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"homepage != null"</span>&gt;</span>homepage=#&#123;homepage&#125;<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"package_name != null"</span>&gt;</span>package_name=#&#123;packageName&#125;<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">set</span>&gt;</span></span><br><span class="line">        WHERE id=#&#123;id&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">update</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">delete</span> <span class="attr">id</span>=<span class="string">"remove"</span>&gt;</span></span><br><span class="line">        DELETE FROM t_apk WHERE id=#&#123;id&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">delete</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"list"</span> <span class="attr">resultMap</span>=<span class="string">"bean"</span>&gt;</span></span><br><span class="line">        SELECT * FROM t_apk WHERE user_id=#&#123;user.id&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"findOne"</span> <span class="attr">resultMap</span>=<span class="string">"bean"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">include</span> <span class="attr">refid</span>=<span class="string">"selectSql"</span>&gt;</span><span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">where</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">choose</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">when</span> <span class="attr">test</span>=<span class="string">"id != null"</span>&gt;</span>id=#&#123;id&#125;<span class="tag">&lt;/<span class="name">when</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">when</span> <span class="attr">test</span>=<span class="string">"secretId != null"</span>&gt;</span>secret_id=#&#123;secretId&#125;<span class="tag">&lt;/<span class="name">when</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">otherwise</span>&gt;</span>1=-1<span class="tag">&lt;/<span class="name">otherwise</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">choose</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">where</span>&gt;</span></span><br><span class="line">        LIMIT 1</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="ApkMapper-xml"><a href="#ApkMapper-xml" class="headerlink" title="ApkMapper.xml"></a>ApkMapper.xml</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" &gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"com.cody.mickey.dao.ApkDao"</span> &gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"bean"</span> <span class="attr">type</span>=<span class="string">"Apk"</span> <span class="attr">autoMapping</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">sql</span> <span class="attr">id</span>=<span class="string">"selectSql"</span>&gt;</span></span><br><span class="line">        SELECT * FROM t_apk</span><br><span class="line">    <span class="tag">&lt;/<span class="name">sql</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"add"</span> <span class="attr">keyProperty</span>=<span class="string">"id"</span> <span class="attr">useGeneratedKeys</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line">        INSERT INTO t_apk(</span><br><span class="line">            description</span><br><span class="line">            ,homepage</span><br><span class="line">            ,name</span><br><span class="line">            ,package_name</span><br><span class="line">            ,category_id</span><br><span class="line">            ,user_id</span><br><span class="line">            ,secret_id</span><br><span class="line">        )</span><br><span class="line">        VALUES(</span><br><span class="line">            #&#123;description&#125;</span><br><span class="line">            ,#&#123;homepage&#125;</span><br><span class="line">            ,#&#123;name&#125;</span><br><span class="line">            ,#&#123;packageName&#125;</span><br><span class="line">            ,#&#123;category.id&#125;</span><br><span class="line">            ,#&#123;user.id&#125;</span><br><span class="line">            ,#&#123;secretId&#125;</span><br><span class="line">        )</span><br><span class="line">    <span class="tag">&lt;/<span class="name">insert</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">update</span> <span class="attr">id</span>=<span class="string">"update"</span>&gt;</span></span><br><span class="line">        update t_apk</span><br><span class="line">        <span class="tag">&lt;<span class="name">set</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"description != null"</span>&gt;</span>description=#&#123;description&#125;<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"homepage != null"</span>&gt;</span>homepage=#&#123;homepage&#125;<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"package_name != null"</span>&gt;</span>package_name=#&#123;packageName&#125;<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">set</span>&gt;</span></span><br><span class="line">        WHERE id=#&#123;id&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">update</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">delete</span> <span class="attr">id</span>=<span class="string">"remove"</span>&gt;</span></span><br><span class="line">        DELETE FROM t_apk WHERE id=#&#123;id&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">delete</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"list"</span> <span class="attr">resultMap</span>=<span class="string">"bean"</span>&gt;</span></span><br><span class="line">        SELECT * FROM t_apk WHERE user_id=#&#123;user.id&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"findOne"</span> <span class="attr">resultMap</span>=<span class="string">"bean"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">include</span> <span class="attr">refid</span>=<span class="string">"selectSql"</span>&gt;</span><span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">where</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">choose</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">when</span> <span class="attr">test</span>=<span class="string">"id != null"</span>&gt;</span>id=#&#123;id&#125;<span class="tag">&lt;/<span class="name">when</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">when</span> <span class="attr">test</span>=<span class="string">"secretId != null"</span>&gt;</span>secret_id=#&#123;secretId&#125;<span class="tag">&lt;/<span class="name">when</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">otherwise</span>&gt;</span>1=-1<span class="tag">&lt;/<span class="name">otherwise</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">choose</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">where</span>&gt;</span></span><br><span class="line">        LIMIT 1</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>以上就定义好了对 <code>Apk</code> 进行增删改查的操作，如果还需要其他的操作，可以自行在 <code>ApkDao</code> 中添加方法，并在对应的 <code>mapper</code> 中写 <code>sql</code> 操作语句。</p>
 
       
@@ -492,7 +492,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -503,9 +503,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.png"
-               alt="吴尧尧" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="吴尧尧">
           <p class="site-author-name" itemprop="name">吴尧尧</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
@@ -516,7 +514,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -584,10 +582,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

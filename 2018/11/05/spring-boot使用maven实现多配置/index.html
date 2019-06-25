@@ -6,11 +6,11 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta name="baidu-site-verification" content="gmbwimzBkP" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta name="baidu-site-verification" content="gmbwimzBkP">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -21,8 +21,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -32,7 +32,7 @@
 
 
 
-  <meta name="baidu-site-verification" content="gmbwimzBkP" />
+  <meta name="baidu-site-verification" content="gmbwimzBkP">
 
 
 
@@ -42,7 +42,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -76,28 +76,28 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="-- spring boot -- maven," />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="-- spring boot -- maven,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
 
 
 
 
 
 
-<meta name="description" content="说明通常在项目开发中，我们需要在不同的运行环境中运行，如果:dev，test，snapshot，release等。Spring Boot项目中在不同的环境下面，可能同一个配置参数会有不同的值，我们通常将这些值配置到不同环境下对应的文件中。比如通常情况下，通用的配置都放在application.properties，而不">
+<meta name="description" content="说明通常在项目开发中，我们需要在不同的运行环境中运行，如果:dev，test，snapshot，release等。Spring Boot项目中在不同的环境下面，可能同一个配置参数会有不同的值，我们通常将这些值配置到不同环境下对应的文件中。比如通常情况下，通用的配置都放在application.properties，而不同环境下对应的配置为application-xxx.properties；比如d">
 <meta name="keywords" content="-- spring boot -- maven">
 <meta property="og:type" content="article">
 <meta property="og:title" content="spring boot 使用maven profiles实现多配置">
@@ -139,7 +139,7 @@
 
 
 
-  <link rel="canonical" href="http://blog.wuyaoyao.com/2018/11/05/spring-boot使用maven实现多配置/"/>
+  <link rel="canonical" href="http://blog.wuyaoyao.com/2018/11/05/spring-boot使用maven实现多配置/">
 
 
 
@@ -204,7 +204,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">吴尧尧的小栈</span>
         <span class="logo-line-after"><i></i></span>
@@ -234,7 +234,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -244,7 +244,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -254,7 +254,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -264,7 +264,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -307,7 +307,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="吴尧尧">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -381,7 +381,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;resources&gt;</span><br><span class="line">	&lt;resource&gt;</span><br><span class="line">		&lt;directory&gt;src/main/resources&lt;/directory&gt;</span><br><span class="line">		&lt;filtering&gt;true&lt;/filtering&gt;</span><br><span class="line">	&lt;/resource&gt;</span><br><span class="line">	&lt;resource&gt;</span><br><span class="line">		&lt;filtering&gt;true&lt;/filtering&gt;</span><br><span class="line">		&lt;directory&gt;src/main/resources&lt;/directory&gt;</span><br><span class="line">		&lt;includes&gt;</span><br><span class="line">			&lt;include&gt;application-$&#123;filter.env&#125;.properties&lt;/include&gt;</span><br><span class="line">			&lt;include&gt;application.properties&lt;/include&gt;</span><br><span class="line">		&lt;/includes&gt;</span><br><span class="line">	&lt;/resource&gt;</span><br><span class="line">&lt;/resources&gt;</span><br></pre></td></tr></table></figure>
 <p>在<code>application.properties</code>中添加配置</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring.profiles.active=@filter.env@</span><br></pre></td></tr></table></figure>
-<p>其中 <code>@filter.env@</code>为指定的环境。</p>
+<p>其中 <a href="mailto:`@filter.env" target="_blank" rel="noopener">`@filter.env</a>@`为指定的环境。</p>
 <p>这个配置是覆盖默认的<code>resources</code>加载方式，此处会加载<code>application-properties</code>以及<code>application-xxx.properties</code>配置文件。<br>其中参数<code>filter.env</code>为上面<code>profile</code>中定义的，我们再运行的时候，会指定。此时，<code>maven</code>配置中就包括了多个配置，如果需要指定某个配置进行打包，则可以使用命令行<code>mvn clean package -P xxx</code>比如 <code>dev</code>环境为</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn package -P dev</span><br></pre></td></tr></table></figure>
 <p>即可以使用指定的配置进行打包。</p>
@@ -492,7 +492,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -503,9 +503,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.png"
-               alt="吴尧尧" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="吴尧尧">
           <p class="site-author-name" itemprop="name">吴尧尧</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
@@ -516,7 +514,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -584,10 +582,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
